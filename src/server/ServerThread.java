@@ -86,17 +86,17 @@ public class ServerThread extends Thread {
 			case Command.START:
 				System.out.println("Connected: " + ia.getHostAddress());
 				return new MessageConnectResult(Result.OK);
+
 			case Command.MENU:
 				return new MessageMenuResult(Result.OK, readMenu(fileName));
-			case Command.ORDER: {
-				MessageOrder order = (MessageOrder) ois.readObject();
-				MessageOrderResult orderResult = saveOrder(order);
-				if (orderResult.checkError()) {
+
+			case Command.ORDER:
+
+				MessageOrderResult orderResult = saveOrder((MessageOrder)msg);
+				if (!orderResult.checkError())
 					System.out.println("New order. #" + orderResult.getNumber());
-					orderNum++;
-				}
 				return orderResult;
-			}
+
 			case Command.END:
 				try {
 					isRunning = false;

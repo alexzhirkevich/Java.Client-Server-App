@@ -5,8 +5,10 @@ import message.MessageResult;
 import message.connection.MessageConnect;
 import message.connection.MessageDisconnect;
 import message.MessageException;
+import message.menu.MessageMenu;
 import message.menu.MessageMenuResult;
 import message.order.MessageOrder;
+import message.order.MessageOrderResult;
 import protocol.Config;
 import protocol.command.Command;
 import protocol.command.CommandException;
@@ -43,6 +45,7 @@ public class Client extends Thread{
 	}
 
 	private byte translateCommand(int cmd) throws Exception{
+		System.out.println(cmd);
 		switch (cmd){
 			case 1:
 				return Command.MENU;
@@ -55,28 +58,50 @@ public class Client extends Thread{
 		}
 	}
 
-	private void processCommand(byte command) throws Exception {
-		oos.writeObject(new Message(command));
-		Object result = ois.readObject();
+	private void readMenu() throws MessageException, IOException,ClassNotFoundException{
+		oos.writeObject(new MessageMenu());
+		MessageMenuResult result = (MessageMenuResult)ois.readObject();
+		if (!result.checkError()) {
+			System.out.println("Меню:");
+			for (String line : result.getOptions()) {
+				System.out.println(line);
+			}
+		}
+		else {
+			System.out.println("Не удалось получить ответ от сервера");
+		}
+	}
+
+	private void makeOrder() throws MessageException, IOException, ClassNotFoundException{
 		Scanner sc = new Scanner(System.in);
+		System.out.println("Введите адресс доставки:");
+		String address = sc.nextLine();
+		System.out.println("Выберите блюда из списка:");
+		String choice = sc.nextLine();
+		oos.writeObject(new MessageOrder(address, choice));
+		MessageOrderResult result = (MessageOrderResult)ois.readObject();
+		if (!result.checkError())
+			System.out.println("Номер вашего заказа: " + result.getNumber());
+		else
+			System.out.println("Не уалось получить ответ от сервера");
+	}
+
+	private void processCommand(byte command) throws Exception {
 		switch (command){
 			case Command.MENU:
-				System.out.println("Меню:");
-				for (String line : ((MessageMenuResult)result).getOptions()){
-					System.out.println(line);
-				}
+				readMenu();
 				break;
+
 			case Command.ORDER:
-				System.out.println("Введите адресс доставки:");
-				String address = sc.nextLine();
-				System.out.println("Выберите блюда из списка:");
-				String choice = sc.nextLine();
-				oos.writeObject(new MessageOrder(address,choice));
+				makeOrder();
 				break;
+
 			case Command.END:
 				disconnect();
+				System.in.read();
 				System.exit(0);
 				break;
+
 			default:
 				throw new CommandException(command);
 		}
@@ -90,11 +115,13 @@ public class Client extends Thread{
 				System.out.println("Не удалось подключиться к серверу");
 				System.exit(1);
 			}
+			Scanner sc = new Scanner(System.in);
 			while (isRunning) {
 				try {
 					System.out.println(helpString);
 
-					byte command = translateCommand(System.in.read());
+					byte command = translateCommand(sc.nextInt());
+
 					if (!Message.isValid(command)) {
 						System.err.println("Неизвестная команда");
 						continue;
