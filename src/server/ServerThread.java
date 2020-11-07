@@ -15,7 +15,6 @@ import java.net.InetAddress;
 import java.net.Socket;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class ServerThread extends Thread {
 
@@ -60,7 +59,7 @@ public class ServerThread extends Thread {
 
 			try (BufferedWriter br = new BufferedWriter(
 					new OutputStreamWriter(
-							new FileOutputStream(fileName)))) {
+							new FileOutputStream(orderName)))) {
 				br.write(order.getAddress() + '\n' + order.getOrder());
 				br.flush();
 			}
@@ -75,7 +74,7 @@ public class ServerThread extends Thread {
 	}
 
 	private MessageResult processMessage(Message msg) throws
-			IOException, ClassNotFoundException, MessageException {
+			IOException, MessageException {
 
 		if (msg == null)
 			return null;
@@ -135,7 +134,7 @@ public class ServerThread extends Thread {
 						oos.writeObject(new MessageResult(msg.getId(), Result.IO_ERROR));
 					e.printStackTrace();
 				} catch (IOException | MessageException err) { }
-			} catch (ClassNotFoundException | MessageException e) { }
+			} catch (MessageException e) { }
 		}
 	}
 }
