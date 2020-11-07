@@ -1,4 +1,4 @@
 out/
-orders/*
+orders/*.txt
 client.bat
 server.bat
