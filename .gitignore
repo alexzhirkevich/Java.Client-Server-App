@@ -1,2 +1,4 @@
 out/
 orders/*
+client.bat
+server.bat
