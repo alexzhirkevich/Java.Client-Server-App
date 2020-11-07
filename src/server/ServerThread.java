@@ -83,7 +83,6 @@ public class ServerThread extends Thread {
 
 		switch (msg.getId()) {
 			case Command.START:
-				System.out.println("Connected: " + ia.getHostAddress());
 				return new MessageConnectResult(Result.OK);
 
 			case Command.MENU:
@@ -117,6 +116,7 @@ public class ServerThread extends Thread {
 
 	@Override
 	public void run() {
+		System.out.println("Connected: " + ia.getHostAddress());
 		isRunning = true;
 		while (isRunning) {
 			Message msg = null;

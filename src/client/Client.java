@@ -98,7 +98,7 @@ public class Client extends Thread{
 
 			case Command.END:
 				disconnect();
-				System.out.println("<Input any key to exit>");
+				System.out.println("<\nPress ENTER to exit>");
 				System.in.read();
 				System.exit(0);
 				break;
