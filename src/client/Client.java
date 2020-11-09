@@ -16,11 +16,22 @@ import protocol.result.Result;
 
 import java.io.*;
 import java.net.Socket;
+import java.net.SocketException;
 import java.util.Scanner;
 
 public class Client extends Thread{
 
-	private static final String helpString =
+	private static final String sLostConnection = "Потеряно соединение с сервером";
+	private static final String sUnknownCommand = "Неизвестная команда";
+	private static final String sResponseError = "Не удалось получить ответ от сервера";
+	private static final String sConnectionFailed = "Не удалось подключиться к серверу";
+	private static final String sMenu = "Меню:";
+	private static final String sOrderNumber = "Номер вашего заказа: ";
+	private static final String sInputAddress = "Введите адресс доставки:";
+	private static final String sInputOrder = "Выберите блюда из списка:";
+	private static final String sHaveANiceDay = "Удачного дня";
+	private static final String sExit = "<Press ENTER to exit>";
+	private static final String sHelp =
 					"_____________________\n" +
 					"| 1. Меню и цены    |\n" +
 					"| 2. Сделать заказ  |\n" +
@@ -37,6 +48,13 @@ public class Client extends Thread{
 		this.clientSocket.setSoTimeout(10000);
 		oos = new ObjectOutputStream(this.clientSocket.getOutputStream());
 		ois = new ObjectInputStream(this.clientSocket.getInputStream());
+	}
+
+	private void exit(String exitMessage) throws IOException{
+		System.err.println(exitMessage);
+		System.out.println(sExit);
+		System.in.read();
+		System.exit(1);
 	}
 
 	private MessageResult sendMessage(Message msg) throws IOException,ClassNotFoundException {
@@ -62,31 +80,31 @@ public class Client extends Thread{
 		oos.writeObject(new MessageMenu());
 		MessageMenuResult result = (MessageMenuResult)ois.readObject();
 		if (!result.checkError()) {
-			System.out.println("Меню:");
+			System.out.println(sMenu);
 			for (String line : result.getOptions()) {
 				System.out.println(line);
 			}
 		}
 		else {
-			System.out.println("Не удалось получить ответ от сервера");
+			System.out.println(sResponseError);
 		}
 	}
 
 	private void makeOrder() throws MessageException, IOException, ClassNotFoundException{
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Введите адресс доставки:");
+		System.out.println(sInputAddress);
 		String address = sc.nextLine();
-		System.out.println("Выберите блюда из списка:");
+		System.out.println(sInputOrder);
 		String choice = sc.nextLine();
 		oos.writeObject(new MessageOrder(address, choice));
 		MessageOrderResult result = (MessageOrderResult)ois.readObject();
 		if (!result.checkError())
-			System.out.println("Номер вашего заказа: " + result.getNumber());
+			System.out.println(sOrderNumber + result.getNumber());
 		else
-			System.out.println("Не уалось получить ответ от сервера");
+			System.out.println(sResponseError);
 	}
 
-	private void processCommand(byte command) throws Exception {
+	private void processCommand(byte command) throws MessageException,IOException, ClassNotFoundException {
 		switch (command){
 			case Command.MENU:
 				readMenu();
@@ -98,9 +116,7 @@ public class Client extends Thread{
 
 			case Command.END:
 				disconnect();
-				System.out.println("\n<Press ENTER to exit>");
-				System.in.read();
-				System.exit(0);
+				exit("\n" + sExit);
 				break;
 
 			default:
@@ -113,21 +129,25 @@ public class Client extends Thread{
 		isRunning = true;
 		try {
 			if (sendMessage(new MessageConnect()).getResult() != Result.OK) {
-				System.out.println("Не удалось подключиться к серверу");
-				System.exit(1);
+				exit(sConnectionFailed);
 			}
 			Scanner sc = new Scanner(System.in);
 			while (isRunning) {
 				try {
-					System.out.println(helpString);
+					System.out.println(sHelp);
 
 					byte command = translateCommand(sc.nextInt());
 
 					if (!Message.isValid(command)) {
-						System.err.println("Неизвестная команда");
+						System.err.println(sUnknownCommand);
 						continue;
 					}
-					processCommand(command);
+					try {
+						processCommand(command);
+					}
+					catch (SocketException e){
+						exit(sLostConnection);
+					}
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -140,9 +160,9 @@ public class Client extends Thread{
 	private void disconnect() throws IOException, MessageException,ClassNotFoundException {
 		isRunning = false;
 		if (sendMessage(new MessageDisconnect()).getResult() == Result.OK)
-			System.out.println("Удачного дня");
+			System.out.println(sHaveANiceDay);
 		else
-			System.out.println("Потеряно соединение сервером");
+			System.out.println(sLostConnection);
 		ois.close();
 		oos.flush();
 		oos.close();
@@ -163,6 +183,6 @@ public class Client extends Thread{
 	}
 
 	public static void main(String[] args) throws Exception{
-		new Client(new Socket(Config.HOST, Config.PORT)).run();
+		new Client(new Socket(Config.HOST, Config.PORT)).start();
 	}
 }
