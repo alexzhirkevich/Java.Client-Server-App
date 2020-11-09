@@ -39,10 +39,10 @@ public class Manage {
 	public static void runClient(String[] args) throws IOException{
 		switch (args.length) {
 			case 2:
-				new Client(new Socket(Config.HOST, Config.PORT)).start();
+				new Client(Config.HOST, Config.PORT).start();
 			case 4:
 				try {
-					new Client(new Socket(args[2], Integer.parseInt(args[3]))).start();
+					new Client(args[2], Integer.parseInt(args[3])).start();
 				} catch (NativeMethodException e) { error(); }
 			default:
 				error();
@@ -50,9 +50,9 @@ public class Manage {
 	}
 	public static void run(String[] args) throws IOException {
 		switch (args[1]){
-			case "application/server":
+			case "server":
 				runServer(args);
-			case "application/client":
+			case "client":
 				runClient(args);
 			default:
 				error();
