@@ -91,8 +91,13 @@ public class ServerThread extends Thread {
 			case Command.ORDER:
 
 				MessageOrderResult orderResult = saveOrder((MessageOrder)msg);
-				if (!orderResult.checkError())
-					System.out.println("New order. #" + orderResult.getNumber());
+				if (!orderResult.checkError()) {
+					System.out.println(
+							"\nNew order. #" + orderResult.getNumber() +
+							"\n\tAddress: " + ((MessageOrder) msg).getAddress() +
+							"\n\tOrder: " + ((MessageOrder) msg).getOrder()
+					);
+				}
 				return orderResult;
 
 			case Command.END:
