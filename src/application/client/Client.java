@@ -10,6 +10,8 @@ import application.protocol.command.CommandException;
 import application.protocol.result.Result;
 
 import java.io.*;
+import java.net.ConnectException;
+import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.net.SocketException;
 import java.util.Scanner;
@@ -34,15 +36,16 @@ public class Client extends Thread{
 					"|___________________|";
 
 	private boolean isRunning;
-	private final Socket clientSocket;
-	private final ObjectInputStream ois;
-	private final ObjectOutputStream oos;
+	private Socket clientSocket;
+	private ObjectInputStream ois;
+	private ObjectOutputStream oos;
 
-	public Client(Socket clientSocket) throws IOException {
-		this.clientSocket = clientSocket;
-		this.clientSocket.setSoTimeout(10000);
-		oos = new ObjectOutputStream(this.clientSocket.getOutputStream());
-		ois = new ObjectInputStream(this.clientSocket.getInputStream());
+	public Client(String host, int port) throws IOException{
+			clientSocket = new Socket();
+			clientSocket.connect(new InetSocketAddress(host, port), 5000);
+			clientSocket.setSoTimeout(10000);
+			oos = new ObjectOutputStream(this.clientSocket.getOutputStream());
+			ois = new ObjectInputStream(this.clientSocket.getInputStream());
 	}
 
 	private void exit(String exitMessage) throws IOException{
@@ -178,6 +181,6 @@ public class Client extends Thread{
 	}
 
 	public static void main(String[] args) throws Exception{
-		new Client(new Socket(Config.HOST, Config.PORT)).start();
+		new Client(Config.HOST, Config.PORT).start();
 	}
 }
