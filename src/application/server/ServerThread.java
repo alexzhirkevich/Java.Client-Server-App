@@ -131,7 +131,6 @@ public class ServerThread extends Thread implements Closeable{
 			}catch (SocketTimeoutException e){ continue; }
 			 catch (Exception e) {
 				 isRunning = false;
-				 System.out.println("Disconnected: " + ia.getHostAddress());
 			 }
 
 			try {
