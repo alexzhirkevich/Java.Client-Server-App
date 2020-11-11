@@ -40,10 +40,12 @@ public class Manage {
 		switch (args.length) {
 			case 2:
 				new Client(Config.HOST, Config.PORT).start();
+				break;
 			case 4:
 				try {
 					new Client(args[2], Integer.parseInt(args[3])).start();
 				} catch (NativeMethodException e) { error(); }
+				break;
 			default:
 				error();
 		}
@@ -52,8 +54,10 @@ public class Manage {
 		switch (args[1]){
 			case "server":
 				runServer(args);
+				break;
 			case "client":
 				runClient(args);
+				break;
 			default:
 				error();
 		}
