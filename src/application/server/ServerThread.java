@@ -86,7 +86,7 @@ public class ServerThread extends Thread implements Closeable{
 		if (msg == null)
 			return null;
 
-		System.out.println("New message. From " + ia.getHostName() + ". Command: " + msg.getId());
+		System.out.println("New message. From " + ia.getHostAddress() + ". Command: " + msg.getId());
 
 		switch (msg.getId()) {
 			case Command.START:
