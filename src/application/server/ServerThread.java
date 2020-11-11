@@ -1,5 +1,6 @@
 package application.server;
 
+import application.manage.Manage;
 import application.message.*;
 import application.message.connection.*;
 import application.message.order.*;
@@ -10,12 +11,13 @@ import java.io.*;
 import java.net.InetAddress;
 import java.net.Socket;
 import java.net.SocketTimeoutException;
+import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
 public class ServerThread extends Thread implements Closeable{
 
-	private static final String fileName = "menu.txt";
+	private static String fileName = "res/menu.txt";
 	private static Integer orderNum = 1;
 
 	private boolean isRunning;
@@ -25,7 +27,7 @@ public class ServerThread extends Thread implements Closeable{
 	private final ObjectInputStream ois;
 	private final InetAddress ia;
 
-	public ServerThread(Server server, Socket socket) throws IOException {
+	public ServerThread(Server server, Socket socket) throws IOException, URISyntaxException {
 		this.client = socket;
 		this.server = server;
 		client.setSoTimeout(500);
