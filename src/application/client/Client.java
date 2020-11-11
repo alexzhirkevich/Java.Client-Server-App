@@ -43,7 +43,7 @@ public class Client extends Thread{
 	public Client(String host, int port) throws IOException{
 			clientSocket = new Socket();
 			clientSocket.connect(new InetSocketAddress(host, port), 5000);
-			clientSocket.setSoTimeout(10000);
+			clientSocket.setSoTimeout(5000);
 			oos = new ObjectOutputStream(this.clientSocket.getOutputStream());
 			ois = new ObjectInputStream(this.clientSocket.getInputStream());
 	}
