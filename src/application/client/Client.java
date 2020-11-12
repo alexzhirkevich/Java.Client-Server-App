@@ -61,9 +61,16 @@ public class Client extends Thread{
 		return (MessageResult)ois.readObject();
 	}
 
-	private byte translateCommand(int cmd) throws Exception{
-		System.out.println(cmd);
-		switch (cmd){
+	private byte translateCommand(String cmd) throws Exception{
+		int command;
+		try{
+			command = Integer.parseInt(cmd);
+		}
+		catch (NumberFormatException e){
+			System.err.println("Некорректный формат команды");
+			return Command.INVALID;
+		}
+		switch (command){
 			case 1:
 				return Command.MENU;
 			case 2:
@@ -135,7 +142,7 @@ public class Client extends Thread{
 				try {
 					System.out.println(sHelp);
 
-					byte command = translateCommand(sc.nextInt());
+					byte command = translateCommand(sc.nextLine());
 
 					if (!Message.isValid(command)) {
 						System.err.println(sUnknownCommand);
