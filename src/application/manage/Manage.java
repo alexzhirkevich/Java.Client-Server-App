@@ -1,6 +1,5 @@
 package application.manage;
 import application.client.Client;
-import com.sun.jdi.NativeMethodException;
 import application.protocol.Config;
 import application.server.Server;
 
@@ -44,7 +43,7 @@ public class Manage {
 			case 4:
 				try {
 					new Client(args[2], Integer.parseInt(args[3])).start();
-				} catch (NativeMethodException e) { error(); }
+				} catch (NumberFormatException e) { error(); }
 				break;
 			default:
 				error();
