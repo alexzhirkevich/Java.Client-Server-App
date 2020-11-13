@@ -110,12 +110,8 @@ public class ServerThread extends Thread implements Closeable{
 				return orderResult;
 
 			case Command.END:
-				try {
 					isRunning = false;
 					return new MessageDisconnectResult(Result.OK);
-				} catch (Exception e) {
-					return new MessageDisconnectResult(Result.UNKNOWN_ERROR);
-				}
 			default:
 				return new MessageResult(Command.INVALID, Result.UNKNOWN_ERROR);
 		}

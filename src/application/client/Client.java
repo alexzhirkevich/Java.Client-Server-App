@@ -67,7 +67,6 @@ public class Client extends Thread{
 			command = Integer.parseInt(cmd);
 		}
 		catch (NumberFormatException e){
-			System.err.println("Некорректный формат команды");
 			return Command.INVALID;
 		}
 		switch (command){
