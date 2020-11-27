@@ -25,53 +25,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="92aca6f1-6cd2-45ff-b861-76db6cdf8a16" name="Default Changelist" comment="fix for android">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/xml/message/context/XmlMessageContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/xml/message/context/XmlMessageContextResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab9/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab9/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab9/application/client/Client.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab9/application/manage/Manage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab9/application/message/Message.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab9/application/message/MessageException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab9/application/message/MessageResult.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab9/application/message/connection/MessageConnect.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab9/application/message/connection/MessageConnectResult.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab9/application/message/connection/MessageDisconnect.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab9/application/message/connection/MessageDisconnectResult.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab9/application/message/menu/MessageMenu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab9/application/message/menu/MessageMenuResult.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab9/application/message/order/MessageOrder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab9/application/message/order/MessageOrderResult.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab9/application/protocol/Config.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab9/application/protocol/command/Command.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab9/application/protocol/command/CommandException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab9/application/protocol/result/Result.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab9/application/protocol/result/ResultException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab9/application/server/Server.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab9/application/server/ServerThread.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab9/res/menu.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objectstream/client/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/manage/Manage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objectstream/manage/Manage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/message/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objectstream/message/Message.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/message/MessageException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objectstream/message/MessageException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/message/MessageResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objectstream/message/MessageResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/message/connection/MessageConnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objectstream/message/connection/MessageConnect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/message/connection/MessageConnectResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objectstream/message/connection/MessageConnectResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/message/connection/MessageDisconnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objectstream/message/connection/MessageDisconnect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/message/connection/MessageDisconnectResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objectstream/message/connection/MessageDisconnectResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/message/menu/MessageMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objectstream/message/menu/MessageMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/message/menu/MessageMenuResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objectstream/message/menu/MessageMenuResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/message/order/MessageOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objectstream/message/order/MessageOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/message/order/MessageOrderResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objectstream/message/order/MessageOrderResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/protocol/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/protocol/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/protocol/command/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/protocol/command/Command.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/protocol/command/CommandException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/protocol/command/CommandException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/protocol/result/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/protocol/result/Result.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/protocol/result/ResultException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/protocol/result/ResultException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objectstream/server/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/server/ServerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objectstream/server/ServerThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -260,22 +214,26 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1605194382286" />
-    <state width="1493" height="595" key="GridCell.Tab.0.bottom" timestamp="1605207005079">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="780" key="GridCell.Tab.0.bottom" timestamp="1606507766064">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="595" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1605207005079" />
-    <state width="1493" height="595" key="GridCell.Tab.0.center" timestamp="1605207005079">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="780" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606507766064" />
+    <state width="1877" height="780" key="GridCell.Tab.0.center" timestamp="1606507766063">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="595" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1605207005079" />
-    <state width="1493" height="595" key="GridCell.Tab.0.left" timestamp="1605207005079">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="780" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606507766063" />
+    <state width="1877" height="780" key="GridCell.Tab.0.left" timestamp="1606507766063">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="595" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1605207005079" />
-    <state width="1493" height="595" key="GridCell.Tab.0.right" timestamp="1605207005079">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="780" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606507766063" />
+    <state width="1877" height="780" key="GridCell.Tab.0.right" timestamp="1606507766064">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="595" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1605207005079" />
+    <state width="1877" height="780" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606507766064" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1605108901842">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
