@@ -25,34 +25,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="92aca6f1-6cd2-45ff-b861-76db6cdf8a16" name="Default Changelist" comment="fix for android">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/xml-schema/XmlMessageConnect.xml" beforeDir="false" afterPath="$PROJECT_DIR$/res/xml-schema/XmlMessageConnect.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/xml-schema/XmlMessageConnectResult.xml" beforeDir="false" afterPath="$PROJECT_DIR$/res/xml-schema/XmlMessageConnectResult.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/xml-schema/XmlMessageContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/res/xml-schema/XmlMessageContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/xml-schema/XmlMessageContextResult.xml" beforeDir="false" afterPath="$PROJECT_DIR$/res/xml-schema/XmlMessageContextResult.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/xml-schema/XmlMessageDisconnect.xml" beforeDir="false" afterPath="$PROJECT_DIR$/res/xml-schema/XmlMessageDisconnect.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/xml-schema/XmlMessageDisconnectResult.xml" beforeDir="false" afterPath="$PROJECT_DIR$/res/xml-schema/XmlMessageDisconnectResult.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/xml-schema/XmlMessageMenu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/res/xml-schema/XmlMessageMenu.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/xml-schema/XmlMessageMenuResult.xml" beforeDir="false" afterPath="$PROJECT_DIR$/res/xml-schema/XmlMessageMenuResult.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/xml-schema/XmlMessageOrder.xml" beforeDir="false" afterPath="$PROJECT_DIR$/res/xml-schema/XmlMessageOrder.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/xml-schema/XmlMessageOrderResult.xml" beforeDir="false" afterPath="$PROJECT_DIR$/res/xml-schema/XmlMessageOrderResult.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/manage/Manage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/manage/Manage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/manage/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/manage/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/objectstream/message/MessageResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objectstream/message/MessageResult.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/protocol/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/protocol/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/xml/Xml.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/xml/Xml.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/xml/message/XmlMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/xml/message/XmlMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/xml/message/XmlMessageResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/xml/message/XmlMessageResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/xml/message/connection/XmlMessageConnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/xml/message/connection/XmlMessageConnect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/xml/message/connection/XmlMessageConnectResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/xml/message/connection/XmlMessageConnectResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/xml/message/connection/XmlMessageDisconnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/xml/message/connection/XmlMessageDisconnect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/xml/message/connection/XmlMessageDisconnectResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/xml/message/connection/XmlMessageDisconnectResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/xml/message/context/XmlMessageContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/xml/message/context/XmlMessageContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/xml/message/context/XmlMessageContextResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/xml/message/context/XmlMessageContextResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/xml/message/menu/XmlMessageMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/xml/message/menu/XmlMessageMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/xml/message/menu/XmlMessageMenuResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/xml/message/menu/XmlMessageMenuResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/xml/message/order/XmlMessageOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/xml/message/order/XmlMessageOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/xml/message/order/XmlMessageOrderResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/xml/message/order/XmlMessageOrderResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/xml/shema/generator/XmlSchemaGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/xml/shema/generator/XmlSchemaGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/xml/shema/generator/XmlSchemaGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/xml/schema/generator/XmlSchemaGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/xml/shema/generator/XmlSchemaOutResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/xml/schema/generator/XmlSchemaOutResolver.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,8 +66,18 @@
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.annotationProcessors" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\5\Desktop\NovayaPapka\proga\github\Java-lab9\res\xml-shema" />
+      <recent name="C:\Users\5\Desktop\NovayaPapka\proga\github\Java-lab9\src" />
+      <recent name="C:\Users\5\Desktop\NovayaPapka\proga\github\Java-lab9" />
+      <recent name="C:\Users\5\Desktop\NovayaPapka\proga\github\Java-lab9\.idea" />
+      <recent name="C:\Users\5\Desktop\Novaya papka\proga\github\Java-lab9\out\production\lab9\res" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="message.connection" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\5\Desktop\NovayaPapka\proga\github\Java-lab9\src\xml\message\context" />
@@ -95,16 +85,6 @@
       <recent name="C:\Users\5\Desktop\Novaya papka\proga\github\Java-lab9\out\production\lab9" />
       <recent name="C:\Users\5\Desktop\Novaya papka\proga\github\Java-lab9\out" />
       <recent name="C:\Users\5\Desktop\зубрильня\proga\Java\labs\lab9\out\production\lab9" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="message.connection" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\5\Desktop\NovayaPapka\proga\github\Java-lab9\res\xml-shema" />
-      <recent name="C:\Users\5\Desktop\NovayaPapka\proga\github\Java-lab9\src" />
-      <recent name="C:\Users\5\Desktop\NovayaPapka\proga\github\Java-lab9" />
-      <recent name="C:\Users\5\Desktop\NovayaPapka\proga\github\Java-lab9\.idea" />
-      <recent name="C:\Users\5\Desktop\Novaya papka\proga\github\Java-lab9\out\production\lab9\res" />
     </key>
   </component>
   <component name="RunManager" selected="Application.test">
@@ -211,11 +191,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="249" y="0" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1605105192306" />
-    <state x="519" y="0" width="1092" height="786" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606841320243">
+    <state x="519" y="0" width="1092" height="786" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606855435222">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="415" y="0" width="1089" height="824" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1605204555317" />
-    <state x="519" y="0" width="1092" height="786" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606841320243" />
+    <state x="519" y="0" width="1092" height="786" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606855435222" />
     <state x="664" y="270" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606844432238">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -253,46 +233,46 @@
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1605194382286" />
     <state x="686" y="211" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606842818671" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1606854539749">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1606856236047">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="595" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1605207005079" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606854539749" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1606854539748">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606856236047" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1606856236047">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="595" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1605207005079" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606854539748" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1606854539748">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606856236047" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1606856236047">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="595" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1605207005079" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606854539748" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1606854539749">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606856236047" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1606856236047">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="595" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1605207005079" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606854539749" />
-    <state width="1877" height="347" key="GridCell.Tab.1.bottom" timestamp="1606854516657">
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606856236047" />
+    <state width="1877" height="347" key="GridCell.Tab.1.bottom" timestamp="1606855452783">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1605108901842" />
-    <state width="1877" height="347" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606854516657" />
-    <state width="1877" height="347" key="GridCell.Tab.1.center" timestamp="1606854516657">
+    <state width="1877" height="347" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606855452783" />
+    <state width="1877" height="347" key="GridCell.Tab.1.center" timestamp="1606855452783">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1605108901842" />
-    <state width="1877" height="347" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606854516657" />
-    <state width="1877" height="347" key="GridCell.Tab.1.left" timestamp="1606854516657">
+    <state width="1877" height="347" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606855452783" />
+    <state width="1877" height="347" key="GridCell.Tab.1.left" timestamp="1606855452783">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1605108901842" />
-    <state width="1877" height="347" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606854516657" />
-    <state width="1877" height="347" key="GridCell.Tab.1.right" timestamp="1606854516657">
+    <state width="1877" height="347" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606855452783" />
+    <state width="1877" height="347" key="GridCell.Tab.1.right" timestamp="1606855452783">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1605108901842" />
-    <state width="1877" height="347" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606854516657" />
+    <state width="1877" height="347" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606855452783" />
     <state x="225" y="0" key="SettingsEditor" timestamp="1606843541886">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -342,7 +322,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/manage/Manage.java</url>
-          <line>23</line>
+          <line>21</line>
           <properties class="manage.Manage" method="runServer">
             <option name="EMULATED" value="true" />
           </properties>
@@ -359,7 +339,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/manage/Manage.java</url>
-          <line>26</line>
+          <line>24</line>
           <option name="timeStamp" value="26" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -374,18 +354,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/manage/Manage.java</url>
-          <line>68</line>
+          <line>66</line>
           <option name="timeStamp" value="41" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/xml/Xml.java</url>
           <line>42</line>
           <option name="timeStamp" value="47" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/manage/Test.java</url>
-          <line>21</line>
-          <option name="timeStamp" value="50" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -1,4 +1,4 @@
-package xml.shema.generator;
+package xml.schema.generator;
 import javax.xml.bind.SchemaOutputResolver;
 import javax.xml.transform.Result;
 import javax.xml.transform.stream.StreamResult;

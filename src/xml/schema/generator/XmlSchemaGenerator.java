@@ -1,5 +1,6 @@
-package xml.shema.generator;
+package xml.schema.generator;
 
+import protocol.Config;
 import xml.Xml;
 import xml.message.connection.XmlMessageConnect;
 import xml.message.connection.XmlMessageConnectResult;
@@ -18,12 +19,11 @@ import java.io.IOException;
 
 public abstract class XmlSchemaGenerator {
 
-	public static final String baseDirName = "res\\xml-schema";
 
 	public static void create(String fileName, Class<? extends Xml> what )
 			throws JAXBException, IOException {
 		JAXBContext context = JAXBContext.newInstance(what);
-		context.generateSchema(new XmlSchemaOutResolver(baseDirName,fileName));
+		context.generateSchema(new XmlSchemaOutResolver(Config.schemaDir,fileName));
 	}
 
 	public static void generateAll() throws JAXBException, IOException {

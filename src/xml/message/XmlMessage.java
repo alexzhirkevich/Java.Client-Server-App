@@ -1,17 +1,12 @@
 package xml.message;
 
-import org.xml.sax.ErrorHandler;
 import protocol.command.Command;
 import protocol.command.CommandException;
 import xml.Xml;
-
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
-import javax.xml.transform.ErrorListener;
 import java.io.Serializable;
-
 
 @XmlTransient
 public class XmlMessage extends Xml implements Command, Serializable {

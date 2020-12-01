@@ -2,8 +2,6 @@ package manage;
 import objectstream.client.Client;
 import protocol.Config;
 import objectstream.server.Server;
-import xml.message.XmlMessage;
-import xml.shema.generator.XmlSchemaGenerator;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
