@@ -10,12 +10,12 @@ import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 
 @XmlRootElement
-public class XmlMessageConnectResult extends XmlMessageResult implements Serializable {
+public class XmlMessageConnectResult extends XmlMessageResult implements Result, Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	public XmlMessageConnectResult() throws ResultException, CommandException {
-		super(Command.CONNECT, Result.INVALID);
+	public XmlMessageConnectResult() throws  CommandException {
+		setCommand(Command.CONNECT);
 	}
 
 	public XmlMessageConnectResult(byte result) throws ResultException, CommandException {

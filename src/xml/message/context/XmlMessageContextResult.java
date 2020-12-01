@@ -20,11 +20,12 @@ public class XmlMessageContextResult extends XmlMessageResult implements Seriali
 	private static final long serialVersionUID = 1L;
 
 	public XmlMessageContextResult() throws ResultException, CommandException {
-		super(Command.CONTEXT, Result.INVALID);
+		setCommand(Command.CONTEXT);
 	}
 
 	public XmlMessageContextResult(byte result) throws ResultException, CommandException {
-		super.setup(Command.CONTEXT, result);
+		setCommand(Command.CONTEXT);
+		setID(result);
 	}
 	
 	public XmlMessageContextResult(byte result, String errorMessage ) throws ResultException, CommandException {

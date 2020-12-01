@@ -1,6 +1,5 @@
 package xml.message;
 
-import objectstream.message.Message;
 import protocol.command.Command;
 import protocol.command.CommandException;
 import protocol.result.Result;
@@ -10,17 +9,23 @@ import xml.Xml;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 import java.io.Serializable;
 
-@XmlRootElement
+@XmlTransient
 public class XmlMessageResult extends Xml implements Result, Serializable {
 
 	public static class Data implements Serializable {
 
 		private static final long serialVersionUID = 1L;
 
+		@XmlAttribute()
 		private byte id;
+
+		@XmlAttribute()
 		private byte command;
+
+		@XmlAttribute()
 		private String errMessage;
 
 		public Data() {
@@ -28,31 +33,27 @@ public class XmlMessageResult extends Xml implements Result, Serializable {
 			id = Result.INVALID;
 		}
 
-		@XmlAttribute
+		@XmlTransient
 		public byte getID() {
 			return id;
 		}
 		public void setID(byte id) throws ResultException {
-			if (!isValid(id))
+			if (!XmlMessageResult.isValid(id))
 				throw new ResultException(id);
 			this.id = id;
 		}
 
-		@XmlAttribute
+		@XmlTransient
 		public byte getCommand(){
 			return command;
 		}
 		public void setCommand(byte command) throws CommandException {
-			if (!Message.isValid(command))
+			if (!XmlMessage.isValid(command))
 				throw new CommandException(command);
 			this.command = command;
 		}
 
-		public boolean checkError() {
-			return id != Result.OK;
-		}
-
-		@XmlAttribute
+		@XmlTransient
 		public String getErrorMessage() {
 			return errMessage;
 		}
@@ -60,6 +61,9 @@ public class XmlMessageResult extends Xml implements Result, Serializable {
 			this.errMessage = errorMessage;
 		}
 
+		public boolean checkError() {
+			return id != Result.OK;
+		}
 		public String toString() {
 			return "" + id + ", " + ", " + errMessage;
 		}
@@ -77,44 +81,35 @@ public class XmlMessageResult extends Xml implements Result, Serializable {
 
 	public XmlMessageResult(byte command, byte result) throws ResultException, CommandException {
 		this();
-		setup(command, result);
+		setCommand(command);
+		setID(result);
 	}
 
-	public XmlMessageResult(byte command, byte id, String errorMessage) throws ResultException, CommandException {
+	public XmlMessageResult(byte command, byte result, String errorMessage) throws ResultException, CommandException {
 		this();
-		setup(command, id, errorMessage);
+		setCommand(command);
+		setID(result);
+		setErrorMessage(errorMessage);
 	}
 
-	protected XmlMessageResult.Data getData(){
-		return data;
-	}
 
-	public byte getID() {
-		return getData().getID();
-	}
+	protected XmlMessageResult.Data getData(){ return data; }
 
-	public boolean checkError() {
-		return getData().checkError();
-	}
+	@XmlTransient()
+	public byte getID() { return getData().getID(); }
+	public void setID(byte id) throws ResultException { getData().setID(id); }
 
-	public String getErrorMessage() {
-		return getData().getErrorMessage();
-	}
+	@XmlTransient
+	public byte getCommand(){ return getData().getCommand(); }
+	public void setCommand(byte  command) throws CommandException { getData().setCommand(command); }
 
-	protected void setup(byte command, byte id, String errorMessage ) throws ResultException, CommandException {
-		setup(command, id);
-		getData().setErrorMessage(errorMessage);
-	}
+	@XmlTransient
+	public String getErrorMessage() { return getData().getErrorMessage(); }
+	public void setErrorMessage(String msg){ getData().setErrorMessage(""); }
 
-	protected void setup(byte command, byte id) throws ResultException, CommandException {
-		getData().setID(id);
-		getData().setCommand(command);
-		getData().setErrorMessage("");
-	}
+	public static boolean isValid(byte result){ return result >= OK && result <= UNKNOWN_ERROR; }
 
-	public static boolean isValid(byte result){
-		return result >= OK && result <= UNKNOWN_ERROR;
-	}
+	public boolean checkError() { return getData().checkError(); }
 
 	@Override
 	public String toString() {

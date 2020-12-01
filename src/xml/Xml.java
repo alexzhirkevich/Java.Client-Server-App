@@ -1,6 +1,7 @@
 package xml;
 
 
+import protocol.Config;
 import protocol.command.Command;
 import protocol.command.CommandException;
 import protocol.result.Result;
@@ -12,44 +13,39 @@ import xml.message.context.*;
 import xml.message.menu.*;
 import xml.message.order.*;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.IOException;
-import java.io.Serializable;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.io.*;
+import java.util.Arrays;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
+import javax.xml.bind.annotation.XmlTransient;
 
-
+@XmlTransient
 public abstract class Xml implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 
 	public static String lastQueryError = null;
 
-	public static void toXml( Xml msg, OutputStream os ) throws JAXBException, IOException {
-		try (ByteArrayOutputStream bos = new ByteArrayOutputStream(1024)) {
+	public static void toXml(Xml msg , OutputStream os ) throws JAXBException, IOException {
+		try (ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream(Config.XML_MAX)) {
 			JAXBContext context = JAXBContext.newInstance(msg.getClass());
 			Marshaller m = context.createMarshaller();
-			m.marshal(msg, bos);
-			bos.flush();
-			os.write(bos.toByteArray());
+			m.marshal(msg, byteArrayOutputStream);
+			byteArrayOutputStream.flush();
+			os.write(byteArrayOutputStream.toByteArray());
 		}
 	}
 
 	public static Xml fromXml( Class<? extends Xml> what, InputStream is ) throws JAXBException, IOException {
-		byte[] data = new byte[1024];
-		is.read(data,0,1024);
-		try(ByteArrayInputStream bos = new ByteArrayInputStream(data)) {
+		byte[] data = new byte[Config.XML_MAX];
+		int len = is.read(data,0,Config.XML_MAX);
+		try(ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(Arrays.copyOf(data,len))) {
 			JAXBContext context = JAXBContext.newInstance(what);
 			Unmarshaller u = context.createUnmarshaller();
-			return (Xml)u.unmarshal(bos);
+			return (Xml)u.unmarshal(byteArrayInputStream);
 		}
 	}
 
@@ -62,7 +58,7 @@ public abstract class Xml implements Serializable{
 	}
 
 	public static void writeViaByteArray(DataOutputStream os, Xml msg)  throws JAXBException, IOException {
-		try(ByteArrayOutputStream bufOut = new ByteArrayOutputStream(512)) {
+		try(ByteArrayOutputStream bufOut = new ByteArrayOutputStream(Config.XML_MAX)) {
 			try (DataOutputStream out = new DataOutputStream(bufOut)) {
 				String name = msg.getClass().getName();
 				out.writeUTF(name);

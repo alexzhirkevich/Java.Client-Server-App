@@ -13,6 +13,6 @@ public class XmlMessageMenu extends XmlMessage implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	public XmlMessageMenu() throws CommandException {
-		super(Command.MENU);
+		super(MENU);
 	}
 }

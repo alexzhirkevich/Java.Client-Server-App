@@ -3,35 +3,17 @@
 
   <xs:element name="xmlMessageDisconnectResult" type="xmlMessageDisconnectResult"/>
 
-  <xs:element name="xmlMessageResult" type="xmlMessageResult"/>
-
   <xs:complexType name="xmlMessageDisconnectResult">
-    <xs:complexContent>
-      <xs:extension base="xmlMessageResult">
-        <xs:sequence/>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-
-  <xs:complexType name="xmlMessageResult">
-    <xs:complexContent>
-      <xs:extension base="xml">
-        <xs:sequence>
-          <xs:element name="data" type="data" minOccurs="0"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-
-  <xs:complexType name="xml" abstract="true">
-    <xs:sequence/>
+    <xs:sequence>
+      <xs:element name="data" type="data" minOccurs="0"/>
+    </xs:sequence>
   </xs:complexType>
 
   <xs:complexType name="data">
     <xs:sequence/>
-    <xs:attribute name="command" type="xs:byte" use="required"/>
-    <xs:attribute name="errorMessage" type="xs:string"/>
     <xs:attribute name="id" type="xs:byte" use="required"/>
+    <xs:attribute name="command" type="xs:byte" use="required"/>
+    <xs:attribute name="errMessage" type="xs:string"/>
   </xs:complexType>
 </xs:schema>
 

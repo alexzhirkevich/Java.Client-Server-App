@@ -30,8 +30,8 @@ public class MessageResult implements Result, Serializable {
 		this.message = message;
 	}
 
-	public static boolean isValid(byte result){
-		return result >= OK && result <= UNKNOWN_ERROR;
+	protected static boolean isValid(byte result){
+		return result >= INVALID && result <= UNKNOWN_ERROR;
 	}
 
 	public byte getResult() {

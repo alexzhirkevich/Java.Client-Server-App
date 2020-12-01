@@ -11,12 +11,12 @@ import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 
 @XmlRootElement
-public class XmlMessageDisconnectResult extends XmlMessageResult implements Serializable {
+public class XmlMessageDisconnectResult extends XmlMessageResult implements Result, Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	public XmlMessageDisconnectResult() throws ResultException, CommandException {
-		super(Command.DISCONNECT, Result.INVALID);
+		setCommand(Command.DISCONNECT);
 	}
 
 	public XmlMessageDisconnectResult(byte result) throws ResultException, CommandException {

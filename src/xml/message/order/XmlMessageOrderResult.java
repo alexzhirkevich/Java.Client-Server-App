@@ -7,8 +7,10 @@ import xml.message.XmlMessageException;
 import xml.message.XmlMessageResult;
 
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 
+@XmlRootElement
 public class XmlMessageOrderResult extends XmlMessageResult implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -16,8 +18,9 @@ public class XmlMessageOrderResult extends XmlMessageResult implements Serializa
 	@XmlElement
 	private int number;
 
-	public XmlMessageOrderResult() throws ResultException, CommandException {
-		super(Command.ORDER, Result.INVALID);
+	public XmlMessageOrderResult() throws CommandException {
+		setCommand(Command.ORDER);
+		number = -1;
 	}
 
 	public XmlMessageOrderResult(byte result, int number) throws ResultException, CommandException {

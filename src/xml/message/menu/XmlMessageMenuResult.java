@@ -13,7 +13,7 @@ import java.io.Serializable;
 import java.util.Arrays;
 
 @XmlRootElement
-public class XmlMessageMenuResult extends XmlMessageResult implements Serializable {
+public class XmlMessageMenuResult extends XmlMessageResult implements Result, Serializable {
 
 	public static final long serialVersionUID = 1L;
 
@@ -21,7 +21,7 @@ public class XmlMessageMenuResult extends XmlMessageResult implements Serializab
 	String[] options;
 
 	public XmlMessageMenuResult() throws ResultException, CommandException {
-		super(Command.MENU, Result.INVALID);
+		setCommand(Command.MENU);
 	}
 
 	public XmlMessageMenuResult(byte result, String[] options) throws ResultException, CommandException {

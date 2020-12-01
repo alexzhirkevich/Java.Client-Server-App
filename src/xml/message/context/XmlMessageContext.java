@@ -18,12 +18,12 @@ public class XmlMessageContext extends XmlMessage implements Serializable {
 	public Byte classID;
 
 	public XmlMessageContext() throws CommandException {
-		super(Command.CONTEXT );
+		super(CONTEXT);
 		classID = 0;
 	}
 
 	public XmlMessageContext(XmlMessage msg ) throws CommandException {
-		super(Command.CONTEXT);
+		super(CONTEXT);
 		classID = msg.getId();
 	}
 

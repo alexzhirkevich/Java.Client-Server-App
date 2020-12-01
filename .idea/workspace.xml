@@ -25,14 +25,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="92aca6f1-6cd2-45ff-b861-76db6cdf8a16" name="Default Changelist" comment="fix for android">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab9.iml" beforeDir="false" afterPath="$PROJECT_DIR$/lab9.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/objectstream/manage/Manage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/manage/Manage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/xml/message/Xml.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/xml/Xml.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/xml-schema/XmlMessageConnect.xml" beforeDir="false" afterPath="$PROJECT_DIR$/res/xml-schema/XmlMessageConnect.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/xml-schema/XmlMessageConnectResult.xml" beforeDir="false" afterPath="$PROJECT_DIR$/res/xml-schema/XmlMessageConnectResult.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/xml-schema/XmlMessageContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/res/xml-schema/XmlMessageContext.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/xml-schema/XmlMessageContextResult.xml" beforeDir="false" afterPath="$PROJECT_DIR$/res/xml-schema/XmlMessageContextResult.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/xml-schema/XmlMessageDisconnect.xml" beforeDir="false" afterPath="$PROJECT_DIR$/res/xml-schema/XmlMessageDisconnect.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/xml-schema/XmlMessageDisconnectResult.xml" beforeDir="false" afterPath="$PROJECT_DIR$/res/xml-schema/XmlMessageDisconnectResult.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/xml-schema/XmlMessageMenu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/res/xml-schema/XmlMessageMenu.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/xml-schema/XmlMessageMenuResult.xml" beforeDir="false" afterPath="$PROJECT_DIR$/res/xml-schema/XmlMessageMenuResult.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/xml-schema/XmlMessageOrder.xml" beforeDir="false" afterPath="$PROJECT_DIR$/res/xml-schema/XmlMessageOrder.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/xml-schema/XmlMessageOrderResult.xml" beforeDir="false" afterPath="$PROJECT_DIR$/res/xml-schema/XmlMessageOrderResult.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/manage/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/manage/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objectstream/message/MessageResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objectstream/message/MessageResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/protocol/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/protocol/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/xml/Xml.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/xml/Xml.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/xml/message/XmlMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/xml/message/XmlMessage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/xml/message/XmlMessageResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/xml/message/XmlMessageResult.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/xml/message/connection/XmlMessageConnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/xml/message/connection/XmlMessageConnect.java" afterDir="false" />
@@ -45,6 +52,7 @@
       <change beforePath="$PROJECT_DIR$/src/xml/message/menu/XmlMessageMenuResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/xml/message/menu/XmlMessageMenuResult.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/xml/message/order/XmlMessageOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/xml/message/order/XmlMessageOrder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/xml/message/order/XmlMessageOrderResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/xml/message/order/XmlMessageOrderResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/xml/shema/generator/XmlSchemaGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/xml/shema/generator/XmlSchemaGenerator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -245,46 +253,46 @@
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1605194382286" />
     <state x="686" y="211" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606842818671" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1606847517620">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1606854539749">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="595" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1605207005079" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606847517620" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1606847517620">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606854539749" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1606854539748">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="595" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1605207005079" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606847517620" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1606847517620">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606854539748" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1606854539748">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="595" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1605207005079" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606847517620" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1606847517620">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606854539748" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1606854539749">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="595" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1605207005079" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606847517620" />
-    <state width="1877" height="347" key="GridCell.Tab.1.bottom" timestamp="1606844125082">
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606854539749" />
+    <state width="1877" height="347" key="GridCell.Tab.1.bottom" timestamp="1606854516657">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1605108901842" />
-    <state width="1877" height="347" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606844125082" />
-    <state width="1877" height="347" key="GridCell.Tab.1.center" timestamp="1606844125082">
+    <state width="1877" height="347" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606854516657" />
+    <state width="1877" height="347" key="GridCell.Tab.1.center" timestamp="1606854516657">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1605108901842" />
-    <state width="1877" height="347" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606844125082" />
-    <state width="1877" height="347" key="GridCell.Tab.1.left" timestamp="1606844125081">
+    <state width="1877" height="347" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606854516657" />
+    <state width="1877" height="347" key="GridCell.Tab.1.left" timestamp="1606854516657">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1605108901842" />
-    <state width="1877" height="347" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606844125081" />
-    <state width="1877" height="347" key="GridCell.Tab.1.right" timestamp="1606844125082">
+    <state width="1877" height="347" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606854516657" />
+    <state width="1877" height="347" key="GridCell.Tab.1.right" timestamp="1606854516657">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1605108901842" />
-    <state width="1877" height="347" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606844125082" />
+    <state width="1877" height="347" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606854516657" />
     <state x="225" y="0" key="SettingsEditor" timestamp="1606843541886">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -306,16 +314,20 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="209" y="33" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1604645783976" />
-    <state x="531" y="236" key="run.anything.popup" timestamp="1606843923827">
+    <state x="660" y="277" key="refactoring.ChangeSignatureDialog" timestamp="1606853567814">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="660" y="277" key="refactoring.ChangeSignatureDialog/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606853567814" />
+    <state x="531" y="236" key="run.anything.popup" timestamp="1606850861069">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1604958019968" />
-    <state x="531" y="236" key="run.anything.popup/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606843923827" />
-    <state x="539" y="183" width="840" height="856" key="search.everywhere.popup" timestamp="1606500124642">
+    <state x="531" y="236" key="run.anything.popup/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606850861069" />
+    <state x="539" y="183" width="840" height="856" key="search.everywhere.popup" timestamp="1606854277768">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1604687640509" />
-    <state x="539" y="183" width="840" height="856" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606500124642" />
+    <state x="539" y="183" width="840" height="856" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606854277768" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -356,11 +368,6 @@
           <option name="timeStamp" value="36" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/objectstream/message/Message.java</url>
-          <line>21</line>
-          <option name="timeStamp" value="37" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/objectstream/server/ServerThread.java</url>
           <line>50</line>
           <option name="timeStamp" value="38" />
@@ -371,9 +378,14 @@
           <option name="timeStamp" value="41" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/xml/shema/generator/XmlSchemaOutResolver.java</url>
-          <line>18</line>
-          <option name="timeStamp" value="44" />
+          <url>file://$PROJECT_DIR$/src/xml/Xml.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="47" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/manage/Test.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="50" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
