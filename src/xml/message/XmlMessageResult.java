@@ -5,10 +5,14 @@ import protocol.command.Command;
 import protocol.command.CommandException;
 import protocol.result.Result;
 import protocol.result.ResultException;
+import xml.Xml;
 
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 
+@XmlRootElement
 public class XmlMessageResult extends Xml implements Result, Serializable {
 
 	public static class Data implements Serializable {
@@ -64,15 +68,20 @@ public class XmlMessageResult extends Xml implements Result, Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	Data data = new Data();
+	@XmlElement
+	Data data;
 
-	protected XmlMessageResult() { }
+	public XmlMessageResult() {
+		data = new Data();
+	}
 
-	protected XmlMessageResult(byte command, byte result) throws ResultException, CommandException {
+	public XmlMessageResult(byte command, byte result) throws ResultException, CommandException {
+		this();
 		setup(command, result);
 	}
 
-	protected XmlMessageResult(byte command, byte id, String errorMessage) throws ResultException, CommandException {
+	public XmlMessageResult(byte command, byte id, String errorMessage) throws ResultException, CommandException {
+		this();
 		setup(command, id, errorMessage);
 	}
 
@@ -81,7 +90,6 @@ public class XmlMessageResult extends Xml implements Result, Serializable {
 	}
 
 	public byte getID() {
-
 		return getData().getID();
 	}
 

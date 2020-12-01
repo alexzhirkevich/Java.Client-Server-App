@@ -2,10 +2,15 @@ package xml.message;
 
 import protocol.command.Command;
 import protocol.command.CommandException;
+import xml.Xml;
 
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 
+
+@XmlRootElement
 public class XmlMessage extends Xml implements Command, Serializable {
 
 	public static class Data implements Serializable {
@@ -33,7 +38,8 @@ public class XmlMessage extends Xml implements Command, Serializable {
 		}
 	}
 
-	Data data = new Data();
+	@XmlElement
+	protected Data data;
 
 	protected XmlMessage.Data getData(){
 		return data;
@@ -41,9 +47,12 @@ public class XmlMessage extends Xml implements Command, Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	protected XmlMessage() {}
+	protected XmlMessage() {
+		data = new Data();
+	}
 
-	protected XmlMessage(byte id ) throws CommandException {
+	public XmlMessage(byte id) throws CommandException {
+		this();
 		setup(id);
 	}
 

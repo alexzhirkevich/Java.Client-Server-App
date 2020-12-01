@@ -1,10 +1,12 @@
-package xml.message;
+package xml;
 
 
 import protocol.command.Command;
 import protocol.command.CommandException;
 import protocol.result.Result;
 import protocol.result.ResultException;
+import xml.message.XmlMessage;
+import xml.message.XmlMessageResult;
 import xml.message.connection.*;
 import xml.message.context.*;
 import xml.message.menu.*;
@@ -24,22 +26,31 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
+
 public abstract class Xml implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 
-	public static void toXml( Xml msg, OutputStream os )
-			throws JAXBException {
-		JAXBContext context = JAXBContext.newInstance(msg.getClass());
-		Marshaller m = context.createMarshaller();
-		m.marshal( msg, os );
+	public static String lastQueryError = null;
+
+	public static void toXml( Xml msg, OutputStream os ) throws JAXBException, IOException {
+		try (ByteArrayOutputStream bos = new ByteArrayOutputStream(1024)) {
+			JAXBContext context = JAXBContext.newInstance(msg.getClass());
+			Marshaller m = context.createMarshaller();
+			m.marshal(msg, bos);
+			bos.flush();
+			os.write(bos.toByteArray());
+		}
 	}
 
-	public static Xml fromXml( Class<? extends Xml> what,
-									  InputStream is ) throws JAXBException {
-		JAXBContext context = JAXBContext.newInstance(what);
-		Unmarshaller u = context.createUnmarshaller();
-		return ( Xml ) u.unmarshal( is );
+	public static Xml fromXml( Class<? extends Xml> what, InputStream is ) throws JAXBException, IOException {
+		byte[] data = new byte[1024];
+		is.read(data,0,1024);
+		try(ByteArrayInputStream bos = new ByteArrayInputStream(data)) {
+			JAXBContext context = JAXBContext.newInstance(what);
+			Unmarshaller u = context.createUnmarshaller();
+			return (Xml)u.unmarshal(bos);
+		}
 	}
 
 	public static void writeMsg(DataOutputStream os, Xml msg) throws JAXBException, IOException {
@@ -77,13 +88,11 @@ public abstract class Xml implements Serializable{
 		try (ByteArrayInputStream bufIn = new ByteArrayInputStream(raw)) {
 			try (DataInputStream in = new DataInputStream(bufIn)) {
 				String name = in.readUTF();
-				return Xml.fromXml((Class<? extends Xml>)
-						Class.forName( name ), in);
+				return Xml.fromXml((Class<? extends Xml>)Class.forName( name ), in);
 			}
 		}
 	}
 
-	public static String lastQueryError = null;
 	public static boolean query2(XmlMessage msg, DataInputStream is, DataOutputStream os)
 			throws JAXBException, IOException, CommandException {
 		// client
@@ -101,7 +110,7 @@ public abstract class Xml implements Serializable{
 		return false;
 	}
 
-	public static Class<? extends XmlMessageResult> classResultById(byte id) throws ResultException {
+	public static Class<? extends XmlMessageResult> getResultClass(byte id) throws ResultException {
 		switch (id) {
 			case Command.CONTEXT:
 				return XmlMessageContextResult.class;
@@ -118,7 +127,7 @@ public abstract class Xml implements Serializable{
 		}
 	}
 
-	public static Class<? extends XmlMessage> classById(byte id) {
+	public static Class<? extends XmlMessage> getMessageClass(byte id) {
 
 		switch (id) {
 			case Command.CONTEXT:
