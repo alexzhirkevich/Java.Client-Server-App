@@ -3,15 +3,15 @@ package application.xml.client;
 import application.objectstream.client.Client;
 import application.objectstream.message.Message;
 import application.objectstream.message.MessageException;
-import application.objectstream.message.connection.MessageConnectResult;
 import application.protocol.Config;
 import application.protocol.command.Command;
-import application.protocol.command.CommandException;
 import application.protocol.result.Result;
 import application.xml.Xml;
 import application.xml.message.XmlMessage;
 import application.xml.message.XmlMessageResult;
-import application.xml.message.connection.*;
+import application.xml.message.connection.XmlMessageConnect;
+import application.xml.message.connection.XmlMessageConnectResult;
+import application.xml.message.connection.XmlMessageDisconnect;
 import application.xml.message.menu.XmlMessageMenu;
 import application.xml.message.menu.XmlMessageMenuResult;
 import application.xml.message.order.XmlMessageOrder;
@@ -19,13 +19,11 @@ import application.xml.message.order.XmlMessageOrderResult;
 import application.xml.schema.validator.InvalidSchemaException;
 import application.xml.schema.validator.ValidationRequester;
 import application.xml.schema.validator.ValidationType;
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
 
 import javax.xml.bind.JAXBException;
 import java.io.*;
 import java.net.SocketException;
 import java.util.Scanner;
-import java.util.jar.JarException;
 
 public class XmlClient extends Client {
 
@@ -49,7 +47,7 @@ public class XmlClient extends Client {
 			vt = ValidationType.NONE;
 
 		return (XmlMessageResult) Xml.fromXml(Xml.getResultClass(msg.getClass()),
-				dataInputStream.readUTF(), ValidationRequester.Client,vt);
+				dataInputStream.readUTF(), ValidationRequester.Client, vt);
 	}
 
 	@Override
@@ -109,7 +107,7 @@ public class XmlClient extends Client {
 		File file = new File(fname);
 		if (!file.exists())
 			file.createNewFile();
-		try (FileOutputStream fos = new FileOutputStream(file)){
+		try (FileOutputStream fos = new FileOutputStream(file)) {
 			fos.write(data.getBytes());
 			fos.flush();
 		}
@@ -141,14 +139,13 @@ public class XmlClient extends Client {
 			XmlMessageConnectResult mcr = null;
 			if ((mcr = (XmlMessageConnectResult) sendMessage(new XmlMessageConnect())).getID() != Result.OK) {
 				exit(sConnectionFailed);
-			}
-			else
+			} else
 				System.out.println("Соединение с сервером установлено.");
 
 			saveXmlSchema(mcr);
 		} catch (InvalidSchemaException | JAXBException e) {
 			exit("Не удалось получить XML схемы");
-		}catch (IOException ee) {
+		} catch (IOException ee) {
 			ee.printStackTrace();
 			exit(sConnectionFailed);
 		}
@@ -159,29 +156,29 @@ public class XmlClient extends Client {
 	public void run() {
 		try {
 			connect();
-		}catch (MessageException eee){
+		} catch (MessageException eee) {
 			exit("");
 		}
-			isRunning = true;
-			Scanner sc = new Scanner(System.in);
-			while (isRunning) {
-				try {
-					System.out.println(sHelp);
+		isRunning = true;
+		Scanner sc = new Scanner(System.in);
+		while (isRunning) {
+			try {
+				System.out.println(sHelp);
 
-					byte command = translateCommand(sc.nextLine());
+				byte command = translateCommand(sc.nextLine());
 
-					if (!Message.isValid(command)) {
-						System.err.println(sUnknownCommand);
-						continue;
-					}
-					try {
-						processCommand(command);
-					} catch (SocketException e) {
-						exit(sLostConnection);
-					}
-				} catch (Exception e) {
-					e.printStackTrace();
+				if (!Message.isValid(command)) {
+					System.err.println(sUnknownCommand);
+					continue;
 				}
+				try {
+					processCommand(command);
+				} catch (SocketException e) {
+					exit(sLostConnection);
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
 			}
+		}
 	}
 }

@@ -43,7 +43,7 @@ public abstract class Xml {
 		}
 	}
 
-	public static Xml fromXml(Class<? extends Xml> what, String xmlData, ValidationRequester vr,ValidationType vt) throws JAXBException, IOException, InvalidSchemaException {
+	public static Xml fromXml(Class<? extends Xml> what, String xmlData, ValidationRequester vr, ValidationType vt) throws JAXBException, IOException, InvalidSchemaException {
 
 		boolean valid = false;
 		try {

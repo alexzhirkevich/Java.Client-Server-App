@@ -7,11 +7,11 @@ public interface Config {
 	String HOST = "localhost";
 	int XML_MAX = 1024;
 	String orderDir = "orders";
-	String xsdDirServer = "res" + File.separator + "server" +  File.separator + "xsd";
-	String dtdDirServer = "res" + File.separator + "server"  + File.separator + "dtd";
+	String xsdDirServer = "res" + File.separator + "server" + File.separator + "xsd";
+	String dtdDirServer = "res" + File.separator + "server" + File.separator + "dtd";
 	String xsdDirClient = "res" + File.separator + "client" + File.separator + "xsd";
 	String dtdDirClient = "res" + File.separator + "client" + File.separator + "dtd";
-	String menuDIr = "res" + File.separator + "server"+ File.separator +"menu.txt";
+	String menuDir = "res" + File.separator + "server" + File.separator + "menu.txt";
 	String[] xsdFileNames = {
 			"XmlMessageConnect.xsd",
 			"XmlMessageConnectResult.xsd",

@@ -4,7 +4,7 @@ import application.xml.Xml;
 
 public class InvalidSchemaException extends Exception {
 
-	public InvalidSchemaException(String msg){
+	public InvalidSchemaException(String msg) {
 		super(msg);
 	}
 

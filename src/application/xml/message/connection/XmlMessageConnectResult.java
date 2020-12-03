@@ -6,14 +6,11 @@ import application.protocol.command.CommandException;
 import application.protocol.result.Result;
 import application.protocol.result.ResultException;
 import application.xml.message.XmlMessageResult;
-import application.xml.schema.validator.InvalidSchemaException;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
-import java.io.FileNotFoundException;
 import java.io.Serializable;
-import java.util.concurrent.CopyOnWriteArrayList;
 
 @XmlRootElement
 public class XmlMessageConnectResult extends XmlMessageResult implements Result, Serializable {
@@ -25,6 +22,7 @@ public class XmlMessageConnectResult extends XmlMessageResult implements Result,
 
 	@XmlTransient
 	private static boolean err;
+
 	{
 		if (Config.xsdFileNames.length != Config.dtdFileNames.length) {
 			System.err.println("DTD count not equals XSD count");
@@ -53,7 +51,7 @@ public class XmlMessageConnectResult extends XmlMessageResult implements Result,
 			setID(UNKNOWN_ERROR);
 	}
 
-	public int getSchemaCount(){
+	public int getSchemaCount() {
 		return schemaCount;
 	}
 

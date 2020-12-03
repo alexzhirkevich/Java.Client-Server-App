@@ -5,14 +5,12 @@ import application.objectstream.message.MessageException;
 import application.objectstream.message.MessageResult;
 import application.objectstream.message.connection.MessageConnectResult;
 import application.objectstream.message.connection.MessageDisconnectResult;
+import application.objectstream.message.menu.MessageMenuResult;
 import application.objectstream.message.order.MessageOrder;
 import application.objectstream.message.order.MessageOrderResult;
-import application.objectstream.message.menu.MessageMenuResult;
 import application.protocol.Config;
 import application.protocol.command.Command;
 import application.protocol.result.Result;
-import application.xml.message.order.XmlMessageOrder;
-import application.xml.message.order.XmlMessageOrderResult;
 
 import java.io.*;
 import java.net.InetAddress;
@@ -26,7 +24,7 @@ import java.util.Date;
 
 public class ServerThread extends Thread implements Closeable {
 
-	protected static String fileName = Config.menuDIr;
+	protected static String fileName = Config.menuDir;
 	protected static Integer orderNum = 1;
 
 	protected boolean isRunning;
@@ -78,8 +76,8 @@ public class ServerThread extends Thread implements Closeable {
 			try (BufferedWriter br = new BufferedWriter(
 					new OutputStreamWriter(
 							new FileOutputStream(orderName)))) {
-				br.write("Address: " + order.getAddress() + '\n'+
-						"Date: " + new SimpleDateFormat().format(new Date()) +'\n' +
+				br.write("Address: " + order.getAddress() + '\n' +
+						"Date: " + new SimpleDateFormat().format(new Date()) + '\n' +
 						"Order: " + order.getOrder());
 				br.flush();
 			}
@@ -115,7 +113,7 @@ public class ServerThread extends Thread implements Closeable {
 					System.out.println(
 							"New order. #" + (orderResult).getNumber() +
 									"\n\tAddress: " + ((MessageOrder) msg).getAddress() +
-									"\n\tDate: " + new SimpleDateFormat().format(new Date())+
+									"\n\tDate: " + new SimpleDateFormat().format(new Date()) +
 									"\n\tOrder: " + ((MessageOrder) msg).getOrder()
 					);
 				}

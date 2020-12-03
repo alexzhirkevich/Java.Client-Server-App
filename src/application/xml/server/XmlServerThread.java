@@ -54,8 +54,8 @@ public class XmlServerThread extends ServerThread {
 			try (BufferedWriter br = new BufferedWriter(
 					new OutputStreamWriter(
 							new FileOutputStream(orderName)))) {
-				br.write("Address: " + order.getAddress() + '\n'+
-						"Date: " + new SimpleDateFormat().format(new Date()) +'\n' +
+				br.write("Address: " + order.getAddress() + '\n' +
+						"Date: " + new SimpleDateFormat().format(new Date()) + '\n' +
 						"Order: " + order.getOrder());
 				br.flush();
 			}
@@ -71,7 +71,7 @@ public class XmlServerThread extends ServerThread {
 
 	protected String readFile(String fName) throws FileNotFoundException {
 		StringBuilder s = new StringBuilder();
-		try (Scanner in = new Scanner(new File(fName))){
+		try (Scanner in = new Scanner(new File(fName))) {
 			while (in.hasNext())
 				s.append(in.nextLine()).append("\r\n");
 		}
@@ -80,7 +80,7 @@ public class XmlServerThread extends ServerThread {
 
 
 	private void sendSchemas(XmlMessageConnectResult mcr) throws IOException {
-		for(int i =0;i< mcr.getSchemaCount();i++){
+		for (int i = 0; i < mcr.getSchemaCount(); i++) {
 			dos.writeUTF(Config.xsdFileNames[i]);
 			dos.writeUTF(readFile(Config.xsdDirServer + File.separator + Config.xsdFileNames[i]));
 			dos.writeUTF(Config.dtdFileNames[i]);
@@ -89,7 +89,10 @@ public class XmlServerThread extends ServerThread {
 	}
 
 	private XmlMessage createMessage(byte type, String xmlData) throws IOException, JAXBException, InvalidSchemaException {
-		return (XmlMessage) Xml.fromXml(Xml.getMessageClass(type), xmlData, ValidationRequester.Server,ValidationType.FULL);
+		ValidationType vt = ValidationType.FULL;
+		if (type == Command.CONNECT)
+			vt = ValidationType.NONE;
+		return (XmlMessage) Xml.fromXml(Xml.getMessageClass(type), xmlData, ValidationRequester.Server, vt);
 	}
 
 	private XmlMessageResult getResult(XmlMessage msg) throws MessageException, IOException {
@@ -111,7 +114,7 @@ public class XmlServerThread extends ServerThread {
 				if (xmr.checkError())
 					System.out.println("New order. #" + ((XmlMessageOrderResult) xmr).getNumber() +
 							"\n\tAddress: " + ((XmlMessageOrder) msg).getAddress() +
-							"\n\tDate: " + new SimpleDateFormat().format(new Date())+
+							"\n\tDate: " + new SimpleDateFormat().format(new Date()) +
 							"\n\tOrder: " + ((XmlMessageOrder) msg).getOrder());
 
 				break;
@@ -155,8 +158,8 @@ public class XmlServerThread extends ServerThread {
 		}
 		System.out.println("Response data: " + xmr.toString());
 
-		if (xmr.getCommand() == Command.CONNECT){
-			sendSchemas((XmlMessageConnectResult)xmr);
+		if (xmr.getCommand() == Command.CONNECT) {
+			sendSchemas((XmlMessageConnectResult) xmr);
 		}
 
 		return true;

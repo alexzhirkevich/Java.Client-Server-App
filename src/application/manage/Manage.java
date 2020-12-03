@@ -1,17 +1,17 @@
 package application.manage;
 
 import application.objectstream.client.Client;
-import application.protocol.*;
 import application.objectstream.server.Server;
+import application.protocol.Config;
 import application.xml.client.XmlClient;
 import application.xml.schema.generator.XsdGenerator;
-import application.xml.schema.validator.XMLValidator;
 import application.xml.server.XmlServer;
-import application.xml.server.XmlServerThread;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.ConnectException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Scanner;
 
 public class Manage {
@@ -35,10 +35,21 @@ public class Manage {
 		System.out.println("Press <ENTER> to exit");
 	}
 
+	private static void createDirectories() throws IOException {
+		Files.createDirectories(Paths.get(Config.orderDir));
+		Files.createDirectories(Paths.get(Config.dtdDirClient));
+		Files.createDirectories(Paths.get(Config.dtdDirServer));
+		Files.createDirectories(Paths.get(Config.xsdDirClient));
+		Files.createDirectories(Paths.get(Config.xsdDirClient));
+	}
+
 	public static void main(String[] args) {
 		try {
 			if (args.length != 1)
 				error();
+
+			createDirectories();
+
 			switch (args[0]) {
 				case "schema":
 					schema();

@@ -6,12 +6,9 @@ import application.protocol.result.Result;
 import application.protocol.result.ResultException;
 import application.xml.Xml;
 
-import javax.xml.bind.JAXBException;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlTransient;
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
 import java.io.Serializable;
 
 @XmlTransient

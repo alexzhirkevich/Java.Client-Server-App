@@ -1,16 +1,22 @@
 package application.objectstream.client;
 
-import application.objectstream.message.*;
-import application.objectstream.message.connection.*;
-import application.objectstream.message.menu.*;
-import application.objectstream.message.order.*;
-import application.protocol.*;
+import application.objectstream.message.Message;
+import application.objectstream.message.MessageException;
+import application.objectstream.message.MessageResult;
+import application.objectstream.message.connection.MessageConnect;
+import application.objectstream.message.connection.MessageDisconnect;
+import application.objectstream.message.menu.MessageMenu;
+import application.objectstream.message.menu.MessageMenuResult;
+import application.objectstream.message.order.MessageOrder;
+import application.objectstream.message.order.MessageOrderResult;
+import application.protocol.Config;
 import application.protocol.command.Command;
 import application.protocol.command.CommandException;
 import application.protocol.result.Result;
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
-import java.io.*;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.net.SocketException;

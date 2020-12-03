@@ -2,7 +2,6 @@ package application.xml.server;
 
 import application.objectstream.server.Server;
 import application.objectstream.server.ServerThread;
-import application.xml.schema.generator.XsdGenerator;
 
 import java.io.IOException;
 import java.net.ServerSocket;
