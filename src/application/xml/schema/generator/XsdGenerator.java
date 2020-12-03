@@ -18,10 +18,10 @@ import java.io.IOException;
 public abstract class XsdGenerator {
 
 
-	public static void create(String fileName, Class<? extends Xml> what )
+	public static void create(String fileName, Class<? extends Xml> what)
 			throws JAXBException, IOException {
 		JAXBContext context = JAXBContext.newInstance(what);
-		context.generateSchema(new XsdOutputResolver(Config.schemaDir,fileName));
+		context.generateSchema(new XsdOutputResolver(Config.xsdDirServer, fileName));
 	}
 
 	public static void generateAll() throws JAXBException, IOException {

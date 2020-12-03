@@ -23,61 +23,56 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="04a12550-1036-4e08-8a53-d3338d6fbfad" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/application/manage/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/application/xml/schema/generator/XsdGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/application/xml/schema/validator/XMLValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/xml-schema/XmlMessageConnect.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/xml-schema/XmlMessageConnectResult.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/xml-schema/XmlMessageContext.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/xml-schema/XmlMessageContextResult.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/xml-schema/XmlMessageDisconnect.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/xml-schema/XmlMessageDisconnectResult.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/xml-schema/XmlMessageMenu.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/xml-schema/XmlMessageMenuResult.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/xml-schema/XmlMessageOrder.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/xml-schema/XmlMessageOrderResult.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/manage/Manage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/manage/Manage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/manage/Test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/objectstream/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/objectstream/client/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/objectstream/message/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/objectstream/message/Message.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/objectstream/message/MessageException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/objectstream/message/MessageException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/objectstream/message/MessageResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/objectstream/message/MessageResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/objectstream/message/connection/MessageConnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/objectstream/message/connection/MessageConnect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/objectstream/message/connection/MessageConnectResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/objectstream/message/connection/MessageConnectResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/objectstream/message/connection/MessageDisconnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/objectstream/message/connection/MessageDisconnect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/objectstream/message/connection/MessageDisconnectResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/objectstream/message/connection/MessageDisconnectResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/objectstream/message/menu/MessageMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/objectstream/message/menu/MessageMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/objectstream/message/menu/MessageMenuResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/objectstream/message/menu/MessageMenuResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/objectstream/message/order/MessageOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/objectstream/message/order/MessageOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/objectstream/message/order/MessageOrderResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/objectstream/message/order/MessageOrderResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/objectstream/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/objectstream/server/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/objectstream/server/ServerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/objectstream/server/ServerThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/protocol/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/protocol/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/protocol/command/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/protocol/command/Command.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/protocol/command/CommandException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/protocol/command/CommandException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/protocol/result/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/protocol/result/Result.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/protocol/result/ResultException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/protocol/result/ResultException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/xml/Xml.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/xml/Xml.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/xml/message/XmlMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/xml/message/XmlMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/xml/message/XmlMessageException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/xml/message/XmlMessageException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/xml/message/XmlMessageResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/xml/message/XmlMessageResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/xml/message/connection/XmlMessageConnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/xml/message/connection/XmlMessageConnect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/xml/message/connection/XmlMessageConnectResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/xml/message/connection/XmlMessageConnectResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/xml/message/connection/XmlMessageDisconnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/xml/message/connection/XmlMessageDisconnect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/xml/message/connection/XmlMessageDisconnectResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/xml/message/connection/XmlMessageDisconnectResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/xml/message/context/XmlMessageContext.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/xml/message/context/XmlMessageContextResult.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/xml/message/menu/XmlMessageMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/xml/message/menu/XmlMessageMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/xml/message/menu/XmlMessageMenuResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/xml/message/menu/XmlMessageMenuResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/xml/message/order/XmlMessageOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/xml/message/order/XmlMessageOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/xml/message/order/XmlMessageOrderResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/xml/message/order/XmlMessageOrderResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/xml/schema/generator/XmlSchemaGenerator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/xml/schema/generator/XmlSchemaOutResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/xml/schema/generator/XsdOutputResolver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/xml/schema/validator/XmlSchemaValidator.java" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/client/dtd/.gitkeep" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/dtd/XmlMessageConnect.dtd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/dtd/XmlMessageConnectResult.dtd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/dtd/XmlMessageDisconnect.dtd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/dtd/XmlMessageDisconnectResult.dtd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/dtd/XmlMessageMenu.dtd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/dtd/XmlMessageMenuResult.dtd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/dtd/XmlMessageOrder.dtd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/dtd/XmlMessageOrderResult.dtd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/menu.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/xsd/XmlMessageConnect.xsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/xsd/XmlMessageConnectResult.xsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/xsd/XmlMessageDisconnect.xsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/xsd/XmlMessageDisconnectResult.xsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/xsd/XmlMessageMenu.xsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/xsd/XmlMessageMenuResult.xsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/xsd/XmlMessageOrder.xsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/xsd/XmlMessageOrderResult.xsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/manage/Manage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/manage/Manage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/manage/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/manage/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/objectstream/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/objectstream/client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/objectstream/message/MessageException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/objectstream/message/MessageException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/objectstream/message/MessageResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/objectstream/message/MessageResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/objectstream/message/connection/MessageConnectResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/objectstream/message/connection/MessageConnectResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/objectstream/message/connection/MessageDisconnectResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/objectstream/message/connection/MessageDisconnectResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/objectstream/message/menu/MessageMenuResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/objectstream/message/menu/MessageMenuResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/objectstream/message/order/MessageOrderResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/objectstream/message/order/MessageOrderResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/objectstream/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/objectstream/server/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/objectstream/server/ServerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/objectstream/server/ServerThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/protocol/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/protocol/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/protocol/command/CommandException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/protocol/command/CommandException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/protocol/result/ResultException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/protocol/result/ResultException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/xml/Xml.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/xml/Xml.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/xml/client/XmlClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/xml/client/XmlClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/xml/message/XmlMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/xml/message/XmlMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/xml/message/XmlMessageException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/xml/message/XmlMessageException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/xml/message/XmlMessageResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/xml/message/XmlMessageResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/xml/message/connection/XmlMessageConnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/xml/message/connection/XmlMessageConnect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/xml/message/connection/XmlMessageConnectResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/xml/message/connection/XmlMessageConnectResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/xml/message/connection/XmlMessageDisconnectResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/xml/message/connection/XmlMessageDisconnectResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/xml/message/menu/XmlMessageMenuResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/xml/message/menu/XmlMessageMenuResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/xml/message/order/XmlMessageOrderResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/xml/message/order/XmlMessageOrderResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/xml/schema/generator/XsdGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/xml/schema/generator/XsdGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/xml/schema/generator/XsdOutputResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/xml/schema/generator/XsdOutputResolver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/xml/schema/validator/InvalidSchemaException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/xml/schema/validator/InvalidSchemaException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/xml/schema/validator/XMLValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/xml/schema/validator/XMLValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/xml/server/XmlServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/xml/server/XmlServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/xml/server/XmlServerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/xml/server/XmlServerThread.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,21 +83,34 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="ProjectId" id="1l8cfX6oqY9LkyU0rVfthqrct60" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/res/dtd" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/res/client/dtd" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\5\Desktop\NovayaPapka\proga\github\Java-lab9\res\client" />
+      <recent name="C:\Users\5\Desktop\NovayaPapka\proga\github\Java-lab9\res\server" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\5\Desktop\NovayaPapka\proga\github\Java-lab9\res\client\dtd" />
+      <recent name="C:\Users\5\Desktop\NovayaPapka\proga\github\Java-lab9\res\client\xsd" />
       <recent name="C:\Users\5\Desktop\NovayaPapka\proga\github\Java-lab9\res\dtd" />
     </key>
   </component>
@@ -119,6 +127,14 @@
       <option name="MAIN_CLASS_NAME" value="application.manage.Manage" />
       <module name="lab9" />
       <option name="PROGRAM_PARAMETERS" value="runclientxml" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="generate shema" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="application.manage.Manage" />
+      <module name="lab9" />
+      <option name="PROGRAM_PARAMETERS" value="schema" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -150,29 +166,47 @@
       <item itemvalue="Application.test" />
       <item itemvalue="Application.server.xml" />
       <item itemvalue="Application.client.xml" />
+      <item itemvalue="Application.generate shema" />
       <item itemvalue="Application.server.object" />
       <item itemvalue="Application.client.object" />
     </list>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="04a12550-1036-4e08-8a53-d3338d6fbfad" name="Default Changelist" comment="" />
+      <created>1606982265767</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1606982265767</updated>
+    </task>
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="414" y="175" width="1092" height="810" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606932699314">
+    <state x="414" y="175" width="1092" height="834" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606949711816">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="414" y="175" width="1092" height="810" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606932699314" />
+    <state x="414" y="175" width="1092" height="834" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606949711816" />
     <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser" timestamp="1606944692354">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606944692354" />
-    <state x="689" y="322" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1606932594074">
+    <state x="689" y="322" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1606949643970">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="689" y="322" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606932594074" />
+    <state x="689" y="322" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606949643970" />
     <state x="743" y="414" width="433" height="217" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1606945254860">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -181,38 +215,38 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="756" y="427" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606925401483" />
-    <state width="1877" height="261" key="GridCell.Tab.0.bottom" timestamp="1606948237475">
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom" timestamp="1607010160294">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="261" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606948237475" />
-    <state width="1877" height="261" key="GridCell.Tab.0.center" timestamp="1606948237474">
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1607010160294" />
+    <state width="1877" height="348" key="GridCell.Tab.0.center" timestamp="1607010160294">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="261" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606948237474" />
-    <state width="1877" height="261" key="GridCell.Tab.0.left" timestamp="1606948237474">
+    <state width="1877" height="348" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1607010160294" />
+    <state width="1877" height="348" key="GridCell.Tab.0.left" timestamp="1607010160294">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="261" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606948237474" />
-    <state width="1877" height="261" key="GridCell.Tab.0.right" timestamp="1606948237474">
+    <state width="1877" height="348" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1607010160294" />
+    <state width="1877" height="348" key="GridCell.Tab.0.right" timestamp="1607010160294">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="261" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606948237474" />
-    <state width="1877" height="345" key="GridCell.Tab.1.bottom" timestamp="1606947879030">
+    <state width="1877" height="348" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1607010160294" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1607010160295">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="345" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606947879030" />
-    <state width="1877" height="345" key="GridCell.Tab.1.center" timestamp="1606947879030">
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1607010160295" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1607010160295">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="345" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606947879030" />
-    <state width="1877" height="345" key="GridCell.Tab.1.left" timestamp="1606947879030">
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1607010160295" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1607010160294">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="345" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606947879030" />
-    <state width="1877" height="345" key="GridCell.Tab.1.right" timestamp="1606947879030">
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1607010160294" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1607010160295">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="345" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606947879030" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1607010160295" />
     <state x="505" y="256" width="909" height="629" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1606939954642">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -225,24 +259,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606937754299" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1606935354309">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1607008313679">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606935354309" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1607008313679" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/application/manage/Manage.java</url>
-          <line>75</line>
-          <option name="timeStamp" value="67" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/application/xml/client/XmlClient.java</url>
-          <line>48</line>
-          <option name="timeStamp" value="74" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/application/objectstream/client/Client.java</url>
           <line>91</line>
@@ -250,28 +274,43 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/application/objectstream/client/Client.java</url>
-          <line>126</line>
+          <line>125</line>
           <option name="timeStamp" value="85" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/application/xml/client/XmlClient.java</url>
-          <line>85</line>
-          <option name="timeStamp" value="86" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/application/xml/schema/validator/XMLValidator.java</url>
-          <line>48</line>
-          <option name="timeStamp" value="90" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/application/manage/Test.java</url>
-          <line>15</line>
+          <line>14</line>
           <option name="timeStamp" value="92" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/application/manage/Manage.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="96" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/application/xml/server/XmlServerThread.java</url>
+          <line>158</line>
+          <option name="timeStamp" value="100" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/application/xml/client/XmlClient.java</url>
+          <line>120</line>
+          <option name="timeStamp" value="103" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/application/xml/client/XmlClient.java</url>
+          <line>124</line>
+          <option name="timeStamp" value="104" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/application/xml/schema/validator/XMLValidator.java</url>
-          <line>33</line>
-          <option name="timeStamp" value="94" />
+          <line>31</line>
+          <option name="timeStamp" value="107" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/application/xml/client/XmlClient.java</url>
+          <line>137</line>
+          <option name="timeStamp" value="108" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

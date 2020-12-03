@@ -13,7 +13,7 @@ public class Server extends Thread {
 
 	private ArrayList<ServerThread> userThreads;
 
-	public Server(int PORT){
+	public Server(int PORT) {
 		this.port = PORT;
 		userThreads = new ArrayList<>();
 	}
@@ -22,11 +22,11 @@ public class Server extends Thread {
 		return port;
 	}
 
-	public boolean removeThread(ServerThread st){
+	public boolean removeThread(ServerThread st) {
 		return userThreads.remove(st);
 	}
 
-	public synchronized void start(boolean waitForTerminate){
+	public synchronized void start(boolean waitForTerminate) {
 		start();
 		if (waitForTerminate)
 			waitForTerminate();
@@ -39,7 +39,7 @@ public class Server extends Thread {
 			while (isRunning) {
 				try {
 					Socket socket = server.accept();
-					ServerThread st = new ServerThread(this,socket);
+					ServerThread st = new ServerThread(this, socket);
 					if (st != null) {
 						userThreads.add(st);
 						st.start();
@@ -53,20 +53,21 @@ public class Server extends Thread {
 		}
 	}
 
-	private void clearUserThreads(){
-		for (ServerThread st: userThreads){
+	private void clearUserThreads() {
+		for (ServerThread st : userThreads) {
 			try {
 				st.close();
 				System.out.println(st.getClientInetAddress().getHostName());
+			} catch (IOException e) {
 			}
-			catch (IOException e){}
 		}
 	}
 
 	public void waitForTerminate() {
 		System.out.println("Server started on port: " + port + "\nCtrl+c to terminate");
 		Scanner sc = new Scanner(System.in);
-		while (sc.hasNextLine()){ }
+		while (sc.hasNextLine()) {
+		}
 		isRunning = false;
 
 	}

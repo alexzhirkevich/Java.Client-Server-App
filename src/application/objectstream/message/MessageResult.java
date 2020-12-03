@@ -14,23 +14,23 @@ public class MessageResult implements Result, Serializable {
 	private final byte id;
 	private final byte cmdID;
 
-	public MessageResult(byte command, byte result) throws MessageException{
-		if (!MessageResult.isValid(result)){
+	public MessageResult(byte command, byte result) throws MessageException {
+		if (!MessageResult.isValid(result)) {
 			throw new ResultException(result);
 		}
-		if (!Message.isValid(command)){
+		if (!Message.isValid(command)) {
 			throw new CommandException(command);
 		}
 		this.id = result;
 		this.cmdID = command;
 	}
 
-	public MessageResult(byte command, byte result, String message) throws MessageException{
-		this(command,result);
+	public MessageResult(byte command, byte result, String message) throws MessageException {
+		this(command, result);
 		this.message = message;
 	}
 
-	protected static boolean isValid(byte result){
+	protected static boolean isValid(byte result) {
 		return result >= INVALID && result <= UNKNOWN_ERROR;
 	}
 
@@ -38,11 +38,11 @@ public class MessageResult implements Result, Serializable {
 		return id;
 	}
 
-	public boolean checkError(){
+	public boolean checkError() {
 		return id == OK;
 	}
 
-	public byte getCommand(){
+	public byte getCommand() {
 		return cmdID;
 	}
 

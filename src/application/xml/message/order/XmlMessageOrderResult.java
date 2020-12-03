@@ -1,4 +1,5 @@
 package application.xml.message.order;
+
 import application.protocol.command.Command;
 import application.protocol.command.CommandException;
 import application.protocol.result.ResultException;
@@ -27,7 +28,7 @@ public class XmlMessageOrderResult extends XmlMessageResult implements Serializa
 	}
 
 	public XmlMessageOrderResult(byte result, String message, int number) throws ResultException, CommandException {
-		super(Command.ORDER,result, message);
+		super(Command.ORDER, result, message);
 		this.number = number;
 	}
 

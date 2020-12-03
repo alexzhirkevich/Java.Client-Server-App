@@ -14,7 +14,7 @@ public class MessageDisconnectResult extends MessageResult implements Serializab
 		super(Command.DISCONNECT, result);
 	}
 
-	public MessageDisconnectResult(byte result, String message) throws MessageException{
-		super(Command.DISCONNECT,result,message);
+	public MessageDisconnectResult(byte result, String message) throws MessageException {
+		super(Command.DISCONNECT, result, message);
 	}
 }

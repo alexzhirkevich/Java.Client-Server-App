@@ -23,6 +23,6 @@ public class XmlMessageDisconnectResult extends XmlMessageResult implements Resu
 	}
 
 	public XmlMessageDisconnectResult(byte result, String message) throws ResultException, CommandException {
-		super(Command.DISCONNECT,result,message);
+		super(Command.DISCONNECT, result, message);
 	}
 }

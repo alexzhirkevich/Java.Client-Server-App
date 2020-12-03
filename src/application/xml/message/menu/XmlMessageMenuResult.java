@@ -24,12 +24,12 @@ public class XmlMessageMenuResult extends XmlMessageResult implements Result, Se
 	}
 
 	public XmlMessageMenuResult(byte result, String[] options) throws ResultException, CommandException {
-		super(Command.MENU,result);
-		this.options = Arrays.copyOf(options,options.length);
+		super(Command.MENU, result);
+		this.options = Arrays.copyOf(options, options.length);
 	}
 
 
 	public String[] getOptions() {
-		return Arrays.copyOf(options,options.length);
+		return Arrays.copyOf(options, options.length);
 	}
 }

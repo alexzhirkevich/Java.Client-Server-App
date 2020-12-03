@@ -8,6 +8,7 @@ import application.protocol.*;
 import application.protocol.command.Command;
 import application.protocol.command.CommandException;
 import application.protocol.result.Result;
+import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
 import java.io.*;
 import java.net.InetSocketAddress;
@@ -15,7 +16,7 @@ import java.net.Socket;
 import java.net.SocketException;
 import java.util.Scanner;
 
-public class Client extends Thread{
+public class Client extends Thread {
 
 	protected static final String sLostConnection = "Потеряно соединение с сервером";
 	protected static final String sUnknownCommand = "Неизвестная команда";
@@ -39,33 +40,32 @@ public class Client extends Thread{
 	private ObjectInputStream ois;
 	private ObjectOutputStream oos;
 
-	public Client() throws IOException{
-		this(Config.HOST,Config.PORT);
+	public Client() throws IOException {
+		this(Config.HOST, Config.PORT);
 	}
 
-	public Client(String host, int port) throws IOException{
+	public Client(String host, int port) throws IOException {
 		clientSocket = new Socket();
 		clientSocket.connect(new InetSocketAddress(host, port), 5000);
 		clientSocket.setSoTimeout(5000);
 	}
 
-	protected void exit(String exitMessage) throws IOException{
+	protected void exit(String exitMessage) {
 		if (exitMessage != null)
 			System.err.println(exitMessage);
 		System.out.println(sExit);
-		System.in.read();
+		new Scanner(System.in).nextLine();
 		System.exit(1);
 	}
 
-	protected byte translateCommand(String cmd) throws Exception{
+	protected byte translateCommand(String cmd) throws Exception {
 		int command;
-		try{
+		try {
 			command = Integer.parseInt(cmd);
-		}
-		catch (NumberFormatException e){
+		} catch (NumberFormatException e) {
 			return Command.INVALID;
 		}
-		switch (command){
+		switch (command) {
 			case 1:
 				return Command.MENU;
 			case 2:
@@ -84,8 +84,8 @@ public class Client extends Thread{
 		return (MessageResult) ois.readObject();
 	}
 
-	protected void readMenu() throws MessageException, IOException,ClassNotFoundException{
-		MessageMenuResult result = (MessageMenuResult)sendMessage(new MessageMenu());
+	protected void readMenu() throws MessageException, IOException, ClassNotFoundException {
+		MessageMenuResult result = (MessageMenuResult) sendMessage(new MessageMenu());
 		if (result == null)
 			return;
 
@@ -94,27 +94,26 @@ public class Client extends Thread{
 			for (String line : result.getOptions()) {
 				System.out.println(line);
 			}
-		}
-		else {
+		} else {
 			System.out.println(sResponseError);
 		}
 	}
 
-	protected void makeOrder() throws MessageException, IOException, ClassNotFoundException{
+	protected void makeOrder() throws MessageException, IOException, ClassNotFoundException {
 		Scanner sc = new Scanner(System.in);
 		System.out.println(sInputAddress);
 		String address = sc.nextLine();
 		System.out.println(sInputOrder);
 		String choice = sc.nextLine();
-		MessageOrderResult result = (MessageOrderResult)sendMessage(new MessageOrder(address, choice));
+		MessageOrderResult result = (MessageOrderResult) sendMessage(new MessageOrder(address, choice));
 		if (result.checkError())
 			System.out.println(sOrderNumber + result.getNumber());
 		else
 			System.out.println(sResponseError);
 	}
 
-	protected void processCommand(byte command) throws MessageException,IOException, ClassNotFoundException {
-		switch (command){
+	protected void processCommand(byte command) throws MessageException, IOException, ClassNotFoundException {
+		switch (command) {
 			case Command.MENU:
 				readMenu();
 				break;
@@ -160,20 +159,19 @@ public class Client extends Thread{
 					}
 					try {
 						processCommand(command);
-					}
-					catch (SocketException e){
+					} catch (SocketException e) {
 						exit(sLostConnection);
 					}
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
-		}catch (Exception e){
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
-	protected void disconnect() throws IOException, MessageException,ClassNotFoundException {
+	protected void disconnect() throws IOException, MessageException, ClassNotFoundException {
 
 		if (sendMessage(new MessageDisconnect()).getResult() == Result.OK)
 			System.out.println(sHaveANiceDay);
@@ -189,8 +187,8 @@ public class Client extends Thread{
 	public void interrupt() {
 		try {
 			disconnect();
+		} catch (Throwable e) {
 		}
-		catch (Throwable e){ }
 	}
 
 	@Override

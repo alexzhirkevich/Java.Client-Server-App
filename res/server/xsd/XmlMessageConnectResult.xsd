@@ -6,6 +6,7 @@
   <xs:complexType name="xmlMessageConnectResult">
     <xs:sequence>
       <xs:element name="data" type="data" minOccurs="0"/>
+      <xs:element name="schemaCount" type="xs:int"/>
     </xs:sequence>
   </xs:complexType>
 

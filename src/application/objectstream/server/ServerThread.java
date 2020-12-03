@@ -8,19 +8,25 @@ import application.objectstream.message.connection.MessageDisconnectResult;
 import application.objectstream.message.order.MessageOrder;
 import application.objectstream.message.order.MessageOrderResult;
 import application.objectstream.message.menu.MessageMenuResult;
+import application.protocol.Config;
 import application.protocol.command.Command;
 import application.protocol.result.Result;
+import application.xml.message.order.XmlMessageOrder;
+import application.xml.message.order.XmlMessageOrderResult;
+
 import java.io.*;
 import java.net.InetAddress;
 import java.net.Socket;
 import java.net.SocketTimeoutException;
 import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
-public class ServerThread extends Thread implements Closeable{
+public class ServerThread extends Thread implements Closeable {
 
-	protected static String fileName = "res/menu.txt";
+	protected static String fileName = Config.menuDIr;
 	protected static Integer orderNum = 1;
 
 	protected boolean isRunning;
@@ -37,12 +43,12 @@ public class ServerThread extends Thread implements Closeable{
 		ia = client.getInetAddress();
 	}
 
-	public void close() throws IOException{
-		if (oos!=null)
+	public void close() throws IOException {
+		if (oos != null)
 			oos.close();
-		if (ois!=null)
+		if (ois != null)
 			ois.close();
-		if (client!=null)
+		if (client != null)
 			client.close();
 		server.removeThread(this);
 	}
@@ -72,7 +78,9 @@ public class ServerThread extends Thread implements Closeable{
 			try (BufferedWriter br = new BufferedWriter(
 					new OutputStreamWriter(
 							new FileOutputStream(orderName)))) {
-				br.write(order.getAddress() + '\n' + order.getOrder());
+				br.write("Address: " + order.getAddress() + '\n'+
+						"Date: " + new SimpleDateFormat().format(new Date()) +'\n' +
+						"Order: " + order.getOrder());
 				br.flush();
 			}
 			return new MessageOrderResult(Result.OK, orderNum++);
@@ -102,11 +110,12 @@ public class ServerThread extends Thread implements Closeable{
 
 			case Command.ORDER:
 
-				MessageOrderResult orderResult = saveOrder((MessageOrder)msg);
+				MessageOrderResult orderResult = saveOrder((MessageOrder) msg);
 				if (orderResult.checkError()) {
 					System.out.println(
-							"\nNew order. #" + orderResult.getNumber() +
+							"New order. #" + (orderResult).getNumber() +
 									"\n\tAddress: " + ((MessageOrder) msg).getAddress() +
+									"\n\tDate: " + new SimpleDateFormat().format(new Date())+
 									"\n\tOrder: " + ((MessageOrder) msg).getOrder()
 					);
 				}
@@ -122,12 +131,12 @@ public class ServerThread extends Thread implements Closeable{
 	}
 
 	private boolean initConnection() {
-		try{
+		try {
 			ois = new ObjectInputStream(client.getInputStream());
 			oos = new ObjectOutputStream(client.getOutputStream());
 			System.out.println("Connected: " + ia.getHostAddress());
 			return true;
-		} catch (IOException e){
+		} catch (IOException e) {
 			return false;
 		}
 	}
@@ -141,8 +150,9 @@ public class ServerThread extends Thread implements Closeable{
 			Message msg = null;
 			try {
 				msg = (Message) ois.readObject();
-			}catch (SocketTimeoutException e){ continue; }
-			catch (Exception e) {
+			} catch (SocketTimeoutException e) {
+				continue;
+			} catch (Exception e) {
 				isRunning = false;
 			}
 
@@ -152,13 +162,16 @@ public class ServerThread extends Thread implements Closeable{
 				try {
 					oos.writeObject(new MessageResult(msg.getId(), Result.IO_ERROR));
 					e.printStackTrace();
-				} catch (IOException | MessageException err) { }
-			} catch (MessageException e) { System.err.println(e.getMessage()); }
+				} catch (IOException | MessageException err) {
+				}
+			} catch (MessageException e) {
+				System.err.println(e.getMessage());
+			}
 		}
 
 		try {
 			close();
+		} catch (IOException e) {
 		}
-		catch (IOException e){ }
 	}
 }

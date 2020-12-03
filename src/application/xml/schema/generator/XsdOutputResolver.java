@@ -1,4 +1,5 @@
 package application.xml.schema.generator;
+
 import javax.xml.bind.SchemaOutputResolver;
 import javax.xml.transform.Result;
 import javax.xml.transform.stream.StreamResult;
@@ -11,7 +12,7 @@ class XsdOutputResolver extends SchemaOutputResolver {
 
 	public XsdOutputResolver(String baseDirName, String fileName) {
 		this.baseDirName = baseDirName;
-		this.fileName = fileName.endsWith(".xsd") ? fileName : fileName+".xsd";
+		this.fileName = fileName.endsWith(".xsd") ? fileName : fileName + ".xsd";
 	}
 
 	@Override

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
         <!ELEMENT xmlMessageConnectResult (data)>
+        <!ELEMENT schemaCount (#PCDATA)>
         <!ELEMENT data EMPTY>
         <!ATTLIST data
                 ID (0|1|2|3|4) #REQUIRED

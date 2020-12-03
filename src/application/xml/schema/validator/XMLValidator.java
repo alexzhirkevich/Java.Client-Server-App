@@ -2,11 +2,9 @@ package application.xml.schema.validator;
 
 import com.sun.org.apache.xml.internal.security.utils.IgnoreAllErrorHandler;
 import org.w3c.dom.Document;
-import org.xml.sax.ErrorHandler;
 import org.xml.sax.SAXException;
 import application.protocol.Config;
 import application.xml.Xml;
-import org.xml.sax.SAXParseException;
 
 import javax.xml.XMLConstants;
 import javax.xml.parsers.DocumentBuilder;
@@ -20,19 +18,49 @@ import javax.xml.validation.Validator;
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
+
 public abstract class XMLValidator {
 
 	private static Object sync = new Object();
 
-	public static boolean validate(Class<? extends Xml> Class, String xmlRequest) throws SAXException, IOException, ParserConfigurationException {
-		return validateXsd(Class,xmlRequest) && validateDtd(Class, xmlRequest);
+	public static boolean validate(Class<? extends Xml> Class, String xmlRequest,ValidationRequester vr, ValidationType vt)
+			throws SAXException, IOException, ParserConfigurationException {
+
+		if (vt == ValidationType.NONE)
+			return true;
+
+		if (vr == ValidationRequester.Server){
+			if (vt  == ValidationType.XSD){
+				return validateXsd(Class,xmlRequest,Config.xsdDirServer);
+			}
+			else if (vt == ValidationType.DTD){
+				return validateDtd(Class,xmlRequest,Config.dtdDirServer);
+			}
+			else{
+				return validateXsd(Class,xmlRequest,Config.xsdDirServer) &&
+						validateDtd(Class,xmlRequest,Config.dtdDirServer);
+			}
+		}
+		else {
+			if (vt  == ValidationType.XSD){
+				return validateXsd(Class,xmlRequest,Config.xsdDirClient);
+			}
+			else if (vt == ValidationType.DTD){
+				validateDtd(Class,xmlRequest,Config.dtdDirClient);
+			}
+			else{
+				return validateXsd(Class,xmlRequest,Config.xsdDirClient) &&
+						validateDtd(Class,xmlRequest,Config.dtdDirClient);
+			}
+		}
+		return false;
 	}
 
-	public static boolean validateXsd(Class<? extends Xml> Class, String xmlRequest) throws SAXException, IOException {
+	private static boolean validateXsd(Class<? extends Xml> Class, String xmlRequest,String directory) throws SAXException, IOException {
 		synchronized (sync) {
-			try(ByteArrayInputStream bis = new ByteArrayInputStream(xmlRequest.getBytes())) {
+			try (ByteArrayInputStream bis = new ByteArrayInputStream(xmlRequest.getBytes())) {
 				SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
-				Schema schema = factory.newSchema(new File(Config.schemaDir + File.separator + Class.getSimpleName() + ".xsd"));
+				Schema schema = factory.newSchema(new File(directory + File.separator + Class.getSimpleName() + ".xsd"));
 				Validator validator = schema.newValidator();
 				Source source = new StreamSource(bis);
 				validator.validate(source);
@@ -43,7 +71,7 @@ public abstract class XMLValidator {
 		}
 	}
 
-	public static boolean validateDtd(Class<? extends Xml> Class, String xmlRequest) throws ParserConfigurationException {
+	private static boolean validateDtd(Class<? extends Xml> Class, String xmlRequest,String directory) throws ParserConfigurationException {
 		synchronized (sync) {
 
 			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
@@ -55,12 +83,11 @@ public abstract class XMLValidator {
 			lClassName = Character.toLowerCase(lClassName.charAt(0)) + lClassName.substring(1);
 
 			StringBuilder sb = new StringBuilder(xmlRequest);
-			sb.insert(xmlRequest.indexOf('>')+1, String.format("<!DOCTYPE %s SYSTEM \"%s\">",
-					lClassName, Config.dtdDir + File.separatorChar+ Class.getSimpleName()+".dtd"));
-			try(ByteArrayInputStream bis = new ByteArrayInputStream(sb.toString().getBytes())){
+			sb.insert(xmlRequest.indexOf('>') + 1, String.format("<!DOCTYPE %s SYSTEM \"%s\">",
+					lClassName, directory + File.separatorChar + Class.getSimpleName() + ".dtd"));
+			try (ByteArrayInputStream bis = new ByteArrayInputStream(sb.toString().getBytes())) {
 				Document doc = builder.parse(bis);
-			}
-			catch (Exception e){
+			} catch (Exception e) {
 				return false;
 			}
 			return true;

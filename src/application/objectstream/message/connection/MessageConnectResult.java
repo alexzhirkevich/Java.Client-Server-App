@@ -14,7 +14,7 @@ public class MessageConnectResult extends MessageResult implements Serializable 
 		super(Command.CONNECT, result);
 	}
 
-	public MessageConnectResult(byte result, String message) throws MessageException{
-		super(Command.CONNECT,result,message);
+	public MessageConnectResult(byte result, String message) throws MessageException {
+		super(Command.CONNECT, result, message);
 	}
 }

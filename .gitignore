@@ -1,2 +1,4 @@
 out/
 orders/*.txt
+res/client/dtd/*.dtd
+res/client/xsd/*.xsd

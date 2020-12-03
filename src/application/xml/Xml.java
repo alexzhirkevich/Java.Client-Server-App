@@ -15,6 +15,8 @@ import application.xml.message.menu.XmlMessageMenuResult;
 import application.xml.message.order.XmlMessageOrder;
 import application.xml.message.order.XmlMessageOrderResult;
 import application.xml.schema.validator.InvalidSchemaException;
+import application.xml.schema.validator.ValidationRequester;
+import application.xml.schema.validator.ValidationType;
 import application.xml.schema.validator.XMLValidator;
 import org.xml.sax.SAXException;
 
@@ -29,7 +31,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 @XmlTransient
-public abstract class Xml{
+public abstract class Xml {
 
 	public static String toXml(Xml msg) throws JAXBException, IOException {
 		try (ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream(Config.XML_MAX)) {
@@ -41,20 +43,21 @@ public abstract class Xml{
 		}
 	}
 
-	public static Xml fromXml( Class<? extends Xml> what, String xmlData ) throws JAXBException, IOException, InvalidSchemaException {
+	public static Xml fromXml(Class<? extends Xml> what, String xmlData, ValidationRequester vr,ValidationType vt) throws JAXBException, IOException, InvalidSchemaException {
 
 		boolean valid = false;
 		try {
-			valid = XMLValidator.validate(what, xmlData);
-		}catch (SAXException | ParserConfigurationException e){ }
+			valid = XMLValidator.validate(what, xmlData, vr, vt);
+		} catch (SAXException | ParserConfigurationException e) {
+		}
 
 		if (!valid)
-			throw new InvalidSchemaException(what,xmlData);
+			throw new InvalidSchemaException(what, xmlData);
 
-		try(ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(xmlData.getBytes())) {
+		try (ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(xmlData.getBytes())) {
 			JAXBContext context = JAXBContext.newInstance(what);
 			Unmarshaller u = context.createUnmarshaller();
-			return (Xml)u.unmarshal(byteArrayInputStream);
+			return (Xml) u.unmarshal(byteArrayInputStream);
 		}
 	}
 

@@ -39,6 +39,7 @@ public class XmlMessageResult extends Xml implements Result, Serializable {
 		public byte getID() {
 			return id;
 		}
+
 		public void setID(byte id) throws ResultException {
 			if (!XmlMessageResult.isValid(id))
 				throw new ResultException(id);
@@ -46,9 +47,10 @@ public class XmlMessageResult extends Xml implements Result, Serializable {
 		}
 
 		@XmlTransient
-		public byte getCommand(){
+		public byte getCommand() {
 			return command;
 		}
+
 		public void setCommand(byte command) throws CommandException {
 			if (!XmlMessage.isValid(command))
 				throw new CommandException(command);
@@ -59,6 +61,7 @@ public class XmlMessageResult extends Xml implements Result, Serializable {
 		public String getErrorMessage() {
 			return errMessage;
 		}
+
 		public void setErrorMessage(String errorMessage) {
 			this.errMessage = errorMessage;
 		}
@@ -66,6 +69,7 @@ public class XmlMessageResult extends Xml implements Result, Serializable {
 		public boolean checkError() {
 			return id == Result.OK;
 		}
+
 		public String toString() {
 			return "" + id + ", " + ", " + errMessage;
 		}
@@ -95,21 +99,40 @@ public class XmlMessageResult extends Xml implements Result, Serializable {
 	}
 
 
-	protected XmlMessageResult.Data getData(){ return data; }
+	protected XmlMessageResult.Data getData() {
+		return data;
+	}
 
 	@XmlTransient()
-	public byte getID() { return getData().getID(); }
-	public void setID(byte id) throws ResultException { getData().setID(id); }
+	public byte getID() {
+		return getData().getID();
+	}
+
+	public void setID(byte id) throws ResultException {
+		getData().setID(id);
+	}
 
 	@XmlTransient
-	public byte getCommand(){ return getData().getCommand(); }
-	public void setCommand(byte  command) throws CommandException { getData().setCommand(command); }
+	public byte getCommand() {
+		return getData().getCommand();
+	}
+
+	public void setCommand(byte command) throws CommandException {
+		getData().setCommand(command);
+	}
 
 	@XmlTransient
-	public String getErrorMessage() { return getData().getErrorMessage(); }
-	public void setErrorMessage(String msg){ getData().setErrorMessage(""); }
+	public String getErrorMessage() {
+		return getData().getErrorMessage();
+	}
 
-	public static boolean isValid(byte result){ return result >= OK && result <= UNKNOWN_ERROR; }
+	public void setErrorMessage(String msg) {
+		getData().setErrorMessage("");
+	}
+
+	public static boolean isValid(byte result) {
+		return result >= OK && result <= UNKNOWN_ERROR;
+	}
 
 	public boolean checkError() {
 		return getData().checkError();

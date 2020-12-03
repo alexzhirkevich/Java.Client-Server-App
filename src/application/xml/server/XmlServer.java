@@ -18,19 +18,18 @@ public class XmlServer extends Server {
 		userThreads = new ArrayList<>();
 	}
 
-	public boolean removeThread(XmlServerThread st){
+	public boolean removeThread(XmlServerThread st) {
 		return userThreads.remove(st);
 	}
 
 	@Override
 	public void run() {
 		try (ServerSocket server = new ServerSocket(port)) {
-			XsdGenerator.generateAll();
 			isRunning = true;
 			while (isRunning) {
 				try {
 					Socket socket = server.accept();
-					XmlServerThread st = new XmlServerThread(this,socket);
+					XmlServerThread st = new XmlServerThread(this, socket);
 					if (st != null) {
 						userThreads.add(st);
 						st.start();
@@ -44,13 +43,13 @@ public class XmlServer extends Server {
 		}
 	}
 
-	private void clearUserThreads(){
-		for (ServerThread st: userThreads){
+	private void clearUserThreads() {
+		for (ServerThread st : userThreads) {
 			try {
 				st.close();
 				System.out.println(st.getClientInetAddress().getHostName());
+			} catch (IOException e) {
 			}
-			catch (IOException e){}
 		}
 	}
 
