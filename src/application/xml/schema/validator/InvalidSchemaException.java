@@ -2,7 +2,7 @@ package application.xml.schema.validator;
 
 import application.xml.Xml;
 
-public class InvalidSchemaException extends Exception {
+public class InvalidSchemaException extends ValidatorException {
 
 	public InvalidSchemaException(String msg) {
 		super(msg);

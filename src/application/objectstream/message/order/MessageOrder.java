@@ -11,11 +11,23 @@ public class MessageOrder extends Message implements Serializable {
 
 	String address;
 	String order;
+	String phone;
+	String name;
 
-	public MessageOrder(String address, String order) throws CommandException {
+	public MessageOrder(String address, String order,String phone, String name) throws CommandException {
 		super(Message.ORDER);
 		this.address = address;
 		this.order = order;
+		this.phone = phone;
+		this.name = name;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public String getPhone() {
+		return phone;
 	}
 
 	public String getAddress() {

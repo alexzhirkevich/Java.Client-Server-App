@@ -14,10 +14,7 @@ import application.xml.message.menu.XmlMessageMenu;
 import application.xml.message.menu.XmlMessageMenuResult;
 import application.xml.message.order.XmlMessageOrder;
 import application.xml.message.order.XmlMessageOrderResult;
-import application.xml.schema.validator.InvalidSchemaException;
-import application.xml.schema.validator.ValidationRequester;
-import application.xml.schema.validator.ValidationType;
-import application.xml.schema.validator.XMLValidator;
+import application.xml.schema.validator.*;
 import org.xml.sax.SAXException;
 
 import javax.xml.bind.JAXBContext;
@@ -43,16 +40,18 @@ public abstract class Xml {
 		}
 	}
 
-	public static Xml fromXml(Class<? extends Xml> what, String xmlData, ValidationRequester vr, ValidationType vt) throws JAXBException, IOException, InvalidSchemaException {
+	public static Xml fromXml(Class<? extends Xml> what, String xmlData, ValidationRequester vr, ValidationType vt) throws JAXBException, IOException {
 
-		boolean valid = false;
 		try {
-			valid = XMLValidator.validate(what, xmlData, vr, vt);
-		} catch (SAXException | ParserConfigurationException e) {
+			XMLValidator.validate(what, xmlData, vr, vt);
 		}
-
-		if (!valid)
-			throw new InvalidSchemaException(what, xmlData);
+		catch (ValidatorException e){
+			if (vr == ValidationRequester.Server)
+				System.err.println(e.getMessage());
+			else
+				System.err.println("Не удалось проверить схему");
+			return null;
+		}
 
 		try (ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(xmlData.getBytes())) {
 			JAXBContext context = JAXBContext.newInstance(what);

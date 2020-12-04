@@ -70,7 +70,6 @@ public class Server extends Thread {
 		while (sc.hasNextLine()) {
 		}
 		isRunning = false;
-
 	}
 
 	@Override

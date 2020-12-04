@@ -76,7 +76,9 @@ public class ServerThread extends Thread implements Closeable {
 			try (BufferedWriter br = new BufferedWriter(
 					new OutputStreamWriter(
 							new FileOutputStream(orderName)))) {
-				br.write("Address: " + order.getAddress() + '\n' +
+				br.write("Name: " + order.getName() + '\n' +
+						"Phone: " + order.getPhone() + '\n' +
+						"Address: " + order.getAddress() + '\n' +
 						"Date: " + new SimpleDateFormat().format(new Date()) + '\n' +
 						"Order: " + order.getOrder());
 				br.flush();
@@ -112,6 +114,8 @@ public class ServerThread extends Thread implements Closeable {
 				if (orderResult.checkError()) {
 					System.out.println(
 							"New order. #" + (orderResult).getNumber() +
+									"\n\tName: " + ((MessageOrder) msg).getName() +
+									"\n\tPhone: " + ((MessageOrder) msg).getPhone() +
 									"\n\tAddress: " + ((MessageOrder) msg).getAddress() +
 									"\n\tDate: " + new SimpleDateFormat().format(new Date()) +
 									"\n\tOrder: " + ((MessageOrder) msg).getOrder()

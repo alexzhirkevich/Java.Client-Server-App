@@ -107,11 +107,16 @@ public class Client extends Thread {
 
 	protected void makeOrder() throws MessageException, IOException, ClassNotFoundException {
 		Scanner sc = new Scanner(System.in);
+		System.out.println("Как вас зовут?");
+		String name = sc.nextLine();
+		System.out.println("Введите номер телефона:");
+		String phone = sc.nextLine();
 		System.out.println(sInputAddress);
 		String address = sc.nextLine();
 		System.out.println(sInputOrder);
 		String choice = sc.nextLine();
-		MessageOrderResult result = (MessageOrderResult) sendMessage(new MessageOrder(address, choice));
+
+		MessageOrderResult result = (MessageOrderResult) sendMessage(new MessageOrder(address, choice,phone,name));
 		if (result.checkError())
 			System.out.println(sOrderNumber + result.getNumber());
 		else
